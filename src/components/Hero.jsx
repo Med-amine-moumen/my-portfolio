@@ -53,11 +53,11 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="flex items-center gap-5 text-zinc-600 dark:text-zinc-500">
-              <a href="https://github.com/moumen" target="_blank" rel="noopener noreferrer" className="group relative p-3 rounded-full bg-zinc-100 dark:bg-zinc-800/50 hover:bg-gradient-to-br hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="GitHub">
+              <a href="https://github.com/Med-amine-moumen" target="_blank" rel="noopener noreferrer" className="group relative p-3 rounded-full bg-zinc-100 dark:bg-zinc-800/50 hover:bg-gradient-to-br hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="GitHub">
                 <Github className="w-5 h-5 text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors" />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
               </a>
-              <a href="https://linkedin.com/in/moumen" target="_blank" rel="noopener noreferrer" className="group relative p-3 rounded-full bg-zinc-100 dark:bg-zinc-800/50 hover:bg-gradient-to-br hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1 animation-delay-100" aria-label="LinkedIn">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="group relative p-3 rounded-full bg-zinc-100 dark:bg-zinc-800/50 hover:bg-gradient-to-br hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1 animation-delay-100" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5 text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors" />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
               </a>
@@ -65,7 +65,7 @@ const Hero = () => {
                 <Mail className="w-5 h-5 text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors" />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 to-red-500 opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
               </a>
-              <a href="https://twitter.com/moumen" target="_blank" rel="noopener noreferrer" className="group relative p-3 rounded-full bg-zinc-100 dark:bg-zinc-800/50 hover:bg-gradient-to-br hover:from-cyan-500/20 hover:to-blue-500/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1 animation-delay-300" aria-label="Twitter">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="group relative p-3 rounded-full bg-zinc-100 dark:bg-zinc-800/50 hover:bg-gradient-to-br hover:from-cyan-500/20 hover:to-blue-500/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1 animation-delay-300" aria-label="Twitter">
                 <Twitter className="w-5 h-5 text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors" />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
               </a>
