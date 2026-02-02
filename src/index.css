@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-[#0a0a0a] text-zinc-200 transition-colors duration-300;
+}
+
+::selection {
+  background-color: rgba(59, 130, 246, 0.2); /* Blue with opacity */
+  color: inherit;
+}
+
+section {
+  @apply bg-transparent transition-colors duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .glow-effect {
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(12px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes float-confetti {
+    0% {
+      transform: translateY(100vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(calc(var(--float-x, 0) * 50px)) rotate(calc(var(--rotate, 0) * 360deg));
+      opacity: 0;
+    }
+  }
+  
+  .animate-float-confetti {
+    animation: float-confetti linear infinite;
+  }
+  
+  .animate-scroll {
+    animation: scroll 2s ease-in-out infinite;
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out forwards;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+  
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
