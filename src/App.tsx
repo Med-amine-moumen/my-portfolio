@@ -258,7 +258,7 @@ function App() {
           <form className="max-w-md mx-auto flex flex-col gap-4 text-left">
             <div>
               <label className="block text-sm font-medium mb-1">Name</label>
-              <input type="text" className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-accent-base" placeholder="GitHub Copilot" disabled />
+              <input type="text" className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-accent-base" placeholder="full name" disabled />
             </div>
             <div>
               <label className="block text-sm font-medium mb-1">Message</label>
