@@ -251,21 +251,21 @@ function App() {
 
         {/* Hire Me */}
         <section id="hire-me" className="py-20 px-4 max-w-4xl mx-auto border-t border-gray-200 dark:border-gray-800 text-center bg-accent-subtle dark:bg-accent-subtle-dark/50 rounded-3xl mt-10">
-          <h2 className="text-3xl font-bold mb-6">Let's Work Together</h2>
+          <h2 className="text-3xl font-bold mb-6">Let's Work Together (Coming Soon)</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             I am currently open for new opportunities. Whether it's a freelance gig, a full-time position, or a cool project, let's discuss how we can make it happen.
           </p>
           <form className="max-w-md mx-auto flex flex-col gap-4 text-left">
             <div>
               <label className="block text-sm font-medium mb-1">Name</label>
-              <input type="text" className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-accent-base" placeholder="John Doe" />
+              <input type="text" className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-accent-base" placeholder="GitHub Copilot" disabled />
             </div>
             <div>
               <label className="block text-sm font-medium mb-1">Message</label>
-              <textarea rows={4} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-accent-base" placeholder="How can I help you?"></textarea>
+              <textarea rows={4} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-accent-base" placeholder="How can I help you?" disabled></textarea>
             </div>
-            <button type="button" className="w-full py-3 mt-2 bg-accent-base text-white font-medium rounded-lg hover:bg-accent-hover transition">
-              Send Request
+            <button type="button" className="w-full py-3 mt-2 bg-gray-400 text-white font-medium rounded-lg cursor-not-allowed" disabled>
+              Coming Soon
             </button>
           </form>
         </section>
