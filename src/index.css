@@ -1,0 +1,18 @@
+﻿@import 'tailwindcss';
+
+@theme {
+  --color-primary-beige: #f5f5dc;
+  --color-primary-beige-dark: #e8e8ce;
+  --color-primary-black: #171717;
+  --color-primary-black-light: #262626;
+
+  /* New Custom Accent Color (#c7c745) */
+  --color-accent-base: #c7c745;
+  --color-accent-hover: #b3b33e; /* slightly darker for buttons on hover */
+  --color-accent-light: #e3e381; /* lighter for subtle dark mode elements */
+  --color-accent-dark: #8f8f30; /* darker for light mode badges/text */
+  --color-accent-subtle: #f9f9e3; /* very light for background tags */
+  --color-accent-subtle-dark: #3a3a14; /* very dark for dark mode tags */
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
