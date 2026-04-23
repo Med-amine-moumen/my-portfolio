@@ -180,35 +180,95 @@ function App() {
         {/* Big Projects */}
         <section id="big-projects" className="py-20 px-4 max-w-5xl mx-auto border-t border-gray-200 dark:border-gray-800 flex flex-col items-center">
           <h2 className="text-3xl font-bold mb-10">Big Projects</h2>
-          <div className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 flex flex-col lg:flex-row items-center gap-8 hover:shadow-md transition">
-            <div className="flex-1 w-full order-2 lg:order-1 relative rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700 aspect-video bg-gray-100 dark:bg-gray-900 group">
-              <a href="https://ecommerce-amine.vercel.app/" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                  alt="E-Commerce Platform Preview" 
-                  className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
-                />
-              </a>
-            </div>
-            <div className="flex-1 order-1 lg:order-2">
-              <h3 className="font-bold text-2xl mb-4 dark:text-white">Full-Stack E-Commerce Platform</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                A modern e-commerce application featuring product browsing, shopping cart, and a seamless checkout experience.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">Next.js</span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">React</span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+          
+          <div className="flex flex-col gap-8 w-full">
+            {/* E-Commerce Platform */}
+            <div className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 flex flex-col lg:flex-row items-center gap-8 hover:shadow-md transition">
+              <div className="flex-1 w-full order-2 lg:order-1 relative rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col bg-gray-50 dark:bg-gray-900 group shadow-inner">
+                {/* Browser-like header */}
+                <div className="h-8 bg-gray-200 dark:bg-gray-800 w-full flex items-center px-4 gap-2 border-b border-gray-200 dark:border-gray-700">
+                  <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+                <div className="relative aspect-video overflow-hidden">
+                  <a href="https://ecommerce-amine.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                      alt="E-Commerce Platform Preview" 
+                      className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                  </a>
+                </div>
               </div>
-              <a 
-                href="https://ecommerce-amine.vercel.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent-base hover:bg-accent-hover text-white rounded-xl font-medium transition-colors"
-              >
-                <ExternalLink className="w-5 h-5" />
-                Visit Live Site
-              </a>
+              <div className="flex-1 order-1 lg:order-2">
+                <h3 className="font-bold text-2xl mb-4 dark:text-white">Full-Stack E-Commerce Platform</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  A modern e-commerce application featuring product browsing, shopping cart, and a seamless checkout experience.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">Next.js</span>
+                  <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">React</span>
+                  <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+                </div>
+                <a 
+                  href="https://ecommerce-amine.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent-base hover:bg-accent-hover text-white rounded-xl font-medium transition-colors shadow-sm"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  Visit Live Site
+                </a>
+              </div>
+            </div>
+
+            {/* Surf Camp SaaS - Coming Soon */}
+            <div className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 flex flex-col lg:flex-row-reverse items-center gap-8 hover:shadow-md transition opacity-90 overflow-hidden relative">
+              {/* Coming Soon Badge */}
+              <div className="absolute top-6 -right-12 bg-accent-base text-white px-12 py-1 rotate-45 text-xs font-bold tracking-wider shadow-sm z-10">
+                COMING SOON
+              </div>
+              
+              <div className="flex-1 w-full relative rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col bg-gray-50 dark:bg-gray-900 group shadow-inner">
+                <div className="h-8 bg-gray-200 dark:bg-gray-800 w-full flex items-center px-4 gap-2 border-b border-gray-200 dark:border-gray-700 opacity-70">
+                  <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+                <div className="relative aspect-video overflow-hidden bg-gray-100 dark:bg-gray-900 flex items-center justify-center">
+                  <img 
+                    src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    alt="Surf Camp SaaS Preview" 
+                    className="object-cover w-full h-full opacity-40 blur-[2px] transform group-hover:scale-105 transition-transform duration-700 ease-out grayscale"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                    <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-4 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                      <svg className="w-10 h-10 mx-auto text-accent-base mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                      <h4 className="font-bold text-gray-800 dark:text-gray-200">In Development</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-bold text-2xl mb-4 dark:text-white flex items-center gap-3">
+                  Surf Camp SaaS
+                  <span className="px-2 py-1 bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light text-xs rounded-md border border-accent-light dark:border-accent-dark">WIP</span>
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  A comprehensive management platform designed specifically for surf camps. Will feature booking management, equipment tracking, student progress, and scheduling functionalities.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">Next.js</span>
+                  <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">TypeScript</span>
+                  <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+                  <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">Supabase</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-xl font-medium cursor-not-allowed">
+                  <ExternalLink className="w-5 h-5 opacity-50" />
+                  Coming Soon
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -1,18 +1,18 @@
 ﻿@import 'tailwindcss';
 
 @theme {
-  --color-primary-beige: #f5f5dc;
-  --color-primary-beige-dark: #e8e8ce;
-  --color-primary-black: #171717;
-  --color-primary-black-light: #262626;
+  --color-primary-beige: #f5f0e8;
+  --color-primary-beige-dark: #e8ddd0;
+  --color-primary-black: #1a1208;
+  --color-primary-black-light: #2c1f0e;
 
-  /* New Custom Accent Color (#c7c745) */
-  --color-accent-base: #c7c745;
-  --color-accent-hover: #b3b33e; /* slightly darker for buttons on hover */
-  --color-accent-light: #e3e381; /* lighter for subtle dark mode elements */
-  --color-accent-dark: #8f8f30; /* darker for light mode badges/text */
-  --color-accent-subtle: #f9f9e3; /* very light for background tags */
-  --color-accent-subtle-dark: #3a3a14; /* very dark for dark mode tags */
+  /* Warm Brown Accent */
+  --color-accent-base: #8B5E3C;
+  --color-accent-hover: #7a5234;
+  --color-accent-light: #c49a6c;
+  --color-accent-dark: #5c3d22;
+  --color-accent-subtle: #f5ede3;
+  --color-accent-subtle-dark: #3b2210;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
