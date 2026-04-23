@@ -181,7 +181,16 @@ function App() {
         <section id="big-projects" className="py-20 px-4 max-w-5xl mx-auto border-t border-gray-200 dark:border-gray-800 flex flex-col items-center">
           <h2 className="text-3xl font-bold mb-10">Big Projects</h2>
           <div className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 flex flex-col lg:flex-row items-center gap-8 hover:shadow-md transition">
-            <div className="flex-1">
+            <div className="flex-1 w-full order-2 lg:order-1 relative rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700 aspect-video bg-gray-100 dark:bg-gray-900 group">
+              <a href="https://ecommerce-amine.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                  alt="E-Commerce Platform Preview" 
+                  className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+                />
+              </a>
+            </div>
+            <div className="flex-1 order-1 lg:order-2">
               <h3 className="font-bold text-2xl mb-4 dark:text-white">Full-Stack E-Commerce Platform</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 A modern e-commerce application featuring product browsing, shopping cart, and a seamless checkout experience.
