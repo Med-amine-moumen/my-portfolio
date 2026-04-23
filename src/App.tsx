@@ -180,10 +180,27 @@ function App() {
         {/* Big Projects */}
         <section id="big-projects" className="py-20 px-4 max-w-5xl mx-auto border-t border-gray-200 dark:border-gray-800 flex flex-col items-center">
           <h2 className="text-3xl font-bold mb-10">Big Projects</h2>
-          <div className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 text-center text-gray-500 dark:text-gray-400">
-            <svg className="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-            <p className="text-xl">Coming soon...</p>
-            <p className="mt-2 text-sm">I will push my main project here soon!</p>
+          <div className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 flex flex-col lg:flex-row items-center gap-8 hover:shadow-md transition">
+            <div className="flex-1">
+              <h3 className="font-bold text-2xl mb-4 dark:text-white">Full-Stack E-Commerce Platform</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                A modern e-commerce application featuring product browsing, shopping cart, and a seamless checkout experience.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">Next.js</span>
+                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">React</span>
+                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+              </div>
+              <a 
+                href="https://ecommerce-amine.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent-base hover:bg-accent-hover text-white rounded-xl font-medium transition-colors"
+              >
+                <ExternalLink className="w-5 h-5" />
+                Visit Live Site
+              </a>
+            </div>
           </div>
         </section>
 
