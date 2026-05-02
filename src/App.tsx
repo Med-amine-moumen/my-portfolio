@@ -50,6 +50,7 @@ function App() {
   const [selectedDemo, setSelectedDemo]     = useState<any>(null);
   const [iconKey, setIconKey]               = useState(0);
   const [showScrollTop, setShowScrollTop]   = useState(false);
+  const [scrolled, setScrolled]             = useState(false);
 
   /* sync dark class + persist */
   useEffect(() => {
@@ -59,9 +60,12 @@ function App() {
 
   const toggleDark = () => { setDarkMode(p => !p); setIconKey(k => k + 1); };
 
-  /* scroll-to-top visibility */
+  /* scroll-to-top visibility + floating nav */
   useEffect(() => {
-    const onScroll = () => setShowScrollTop(window.scrollY > 420);
+    const onScroll = () => {
+      setShowScrollTop(window.scrollY > 420);
+      setScrolled(window.scrollY > 60);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -105,7 +109,11 @@ function App() {
       <div className="relative z-10">
 
         {/* ── Navigation ────────────────────────────────────────────── */}
-        <nav className={`fixed w-full top-0 left-0 backdrop-blur-xl z-50 border-b transition-colors duration-300 ${darkMode ? 'bg-primary-black/85 border-dark-border' : 'bg-primary-beige/85 border-primary-beige-dark'}`}>
+        <nav className={`fixed z-50 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          scrolled
+            ? `top-3 left-4 right-4 rounded-2xl border shadow-xl ${darkMode ? 'bg-primary-black/92 border-dark-border shadow-black/50' : 'bg-primary-beige/95 border-primary-beige-dark shadow-gray-300/60'}`
+            : `top-0 left-0 right-0 border-b ${darkMode ? 'bg-primary-black/85 border-dark-border' : 'bg-primary-beige/85 border-primary-beige-dark'}`
+        }`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
 
@@ -208,9 +216,10 @@ function App() {
                   </div>
                   <div className="relative aspect-video overflow-hidden">
                     <a href="https://ecommerce-amine.vercel.app/" target="_blank" rel="noopener noreferrer">
-                      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                      <img src="https://api.microlink.io/?url=https://ecommerce-amine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url"
                         alt="E-Commerce Platform"
                         className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80'; }}
                       />
                     </a>
                   </div>
@@ -265,7 +274,7 @@ function App() {
                     <span className="font-mono px-2 py-0.5 text-xs rounded bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/30">WIP</span>
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400 mb-5 text-sm leading-relaxed">
-                    A comprehensive management platform for surf camps. Booking management, equipment tracking, student progress, and scheduling.
+                    A comprehensive management platform for surf camps. Handles bookings, session scheduling, equipment tracking, instructor management, and client profiles.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase'].map(t => (
