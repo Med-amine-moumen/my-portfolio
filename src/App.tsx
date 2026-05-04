@@ -242,6 +242,42 @@ function App() {
                 </div>
               </div>
 
+              {/* Recipe App */}
+              <div className={`${cardBase} p-8 flex flex-col lg:flex-row-reverse items-center gap-8`} data-animate data-animate-delay="1" {...tilt}>
+                <div className="flex-1 w-full relative rounded-xl overflow-hidden border border-gray-200 dark:border-dark-border flex flex-col bg-gray-50 dark:bg-primary-black-light group shadow-inner">
+                  <div className="h-8 bg-gray-200 dark:bg-dark-card w-full flex items-center px-4 gap-1.5 border-b border-gray-200 dark:border-dark-border">
+                    <span className="w-3 h-3 rounded-full bg-red-400" />
+                    <span className="w-3 h-3 rounded-full bg-yellow-400" />
+                    <span className="w-3 h-3 rounded-full bg-green-400" />
+                  </div>
+                  <div className="relative aspect-video overflow-hidden">
+                    <a href="https://recipe-app-moumen.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://api.microlink.io/?url=https://recipe-app-moumen.vercel.app/&screenshot=true&meta=false&embed=screenshot.url"
+                        alt="Recipe App"
+                        className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=1200&q=80'; }}
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-2xl mb-3">Recipe App</h3>
+                  <p className="text-gray-500 dark:text-gray-400 mb-5 text-sm leading-relaxed">
+                    A recipe discovery app that lets users browse, search, and explore a wide variety of recipes with detailed ingredients and step-by-step instructions.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {['React', 'JavaScript', 'Tailwind CSS', 'REST API'].map(t => (
+                      <span key={t} className="px-3 py-1 font-mono text-xs rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30 hover:border-accent-base transition-colors duration-150">{t}</span>
+                    ))}
+                  </div>
+                  <a href="https://recipe-app-moumen.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent-base hover:bg-accent-hover hover:scale-105 hover:shadow-[0_0_18px_rgba(192,123,62,0.35)] active:scale-95 text-white rounded-xl font-medium transition-all duration-200"
+                  >
+                    <ExternalLink className="w-4 h-4" /> Visit Live Site
+                  </a>
+                </div>
+              </div>
+
               {/* Surf Camp SaaS */}
               <div className={`${cardBase} p-8 flex flex-col lg:flex-row-reverse items-center gap-8 overflow-hidden relative`} data-animate data-animate-delay="1" {...tilt}>
                 <div className="absolute top-5 -right-10 bg-accent-base text-white px-10 py-1 rotate-45 text-[10px] font-bold tracking-widest z-10 uppercase">
