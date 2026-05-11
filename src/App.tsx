@@ -6,6 +6,7 @@ import TodoApp from './components/demos/TodoApp';
 import RockPaperScissors from './components/demos/RockPaperScissors';
 import CalculatorApp from './components/demos/CalculatorApp';
 import CounterApp from './components/demos/CounterApp';
+import { ParticleBackground } from './components/ParticleBackground';
 
 const sections = [
   { id: 'home',          label: 'Home'          },
@@ -98,13 +99,15 @@ function App() {
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         {/* grid */}
         <div className={`absolute inset-0 bg-[size:28px_28px] ${darkMode
-          ? 'bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)]'
-          : 'bg-[linear-gradient(to_right,#00000010_1px,transparent_1px),linear-gradient(to_bottom,#00000010_1px,transparent_1px)]'}`}
+          ? 'bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]'
+          : 'bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)]'}`}
         />
-        {/* glow orbs */}
-        <div className={`float-glow absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full blur-[120px] ${darkMode ? 'bg-accent-base opacity-[0.06]' : 'bg-accent-subtle opacity-60'}`} />
-        <div className={`float-glow absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full blur-[100px] ${darkMode ? 'bg-accent-base opacity-[0.04]' : 'bg-accent-subtle opacity-40'}`} style={{ animationDelay: '2.5s' }} />
+        {/* subtle corner glows */}
+        <div className={`float-glow absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full blur-[140px] ${darkMode ? 'bg-accent-base opacity-[0.05]' : 'bg-accent-subtle opacity-50'}`} />
+        <div className={`float-glow absolute -bottom-40 -right-40 w-[400px] h-[400px] rounded-full blur-[120px] ${darkMode ? 'bg-accent-base opacity-[0.03]' : 'bg-accent-subtle opacity-30'}`} style={{ animationDelay: '2.5s' }} />
       </div>
+      {/* ── Interactive particles ────────────────────────────────────── */}
+      <ParticleBackground darkMode={darkMode} />
 
       <div className="relative z-10">
 
@@ -320,6 +323,47 @@ function App() {
                   <div className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-dark-card-hover text-gray-400 dark:text-gray-500 rounded-xl font-medium cursor-not-allowed border border-gray-200 dark:border-dark-border">
                     <ExternalLink className="w-4 h-4 opacity-40" /> Coming Soon
                   </div>
+                </div>
+              </div>
+
+              {/* PoolHomies */}
+              <div className={`${cardBase} p-8 flex flex-col lg:flex-row items-center gap-8`} data-animate data-animate-delay="1" {...tilt}>
+                <div className="flex-1 w-full order-2 lg:order-1 relative rounded-xl overflow-hidden border border-gray-200 dark:border-dark-border flex flex-col bg-gray-50 dark:bg-primary-black-light group shadow-inner">
+                  <div className="h-8 bg-gray-200 dark:bg-dark-card w-full flex items-center px-4 gap-1.5 border-b border-gray-200 dark:border-dark-border">
+                    <span className="w-3 h-3 rounded-full bg-red-400" />
+                    <span className="w-3 h-3 rounded-full bg-yellow-400" />
+                    <span className="w-3 h-3 rounded-full bg-green-400" />
+                    <span className="ml-auto font-mono text-[10px] text-gray-400 dark:text-gray-600 truncate">poolhomies.vercel.app</span>
+                  </div>
+                  <div className="relative aspect-video overflow-hidden">
+                    <a href="https://github.com/Med-amine-moumen/poolhomies" target="_blank" rel="noopener noreferrer">
+                      <img
+                        src="https://api.microlink.io/?url=https://github.com/Med-amine-moumen/poolhomies&screenshot=true&meta=false&embed=screenshot.url"
+                        alt="PoolHomies"
+                        className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1611095970980-20f304cfe37b?w=1200&q=80'; }}
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="flex-1 order-1 lg:order-2">
+                  <div className="flex items-center gap-3 mb-3">
+                    <h3 className="font-bold text-2xl">PoolHomies</h3>
+                    <span className="font-mono px-2 py-0.5 text-xs rounded bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800">Live</span>
+                  </div>
+                  <p className="text-gray-500 dark:text-gray-400 mb-5 text-sm leading-relaxed">
+                    A real-time pool match tracker built for friend groups. Logs wins instantly, ranks players on a live animated leaderboard, tracks win streaks, and shows head-to-head records — all synced across browsers the moment a match is logged via Supabase real-time subscriptions.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'].map(t => (
+                      <span key={t} className="px-3 py-1 font-mono text-xs rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30 hover:border-accent-base transition-colors duration-150">{t}</span>
+                    ))}
+                  </div>
+                  <a href="https://github.com/Med-amine-moumen/poolhomies" target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent-base hover:bg-accent-hover hover:scale-105 hover:shadow-[0_0_18px_rgba(192,123,62,0.35)] active:scale-95 text-white rounded-xl font-medium transition-all duration-200"
+                  >
+                    <FaGithub className="w-4 h-4" /> View on GitHub
+                  </a>
                 </div>
               </div>
 
