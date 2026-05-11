@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 
-const PARTICLE_COUNT = 55;
-const CONNECT_DIST   = 140;
-const MOUSE_DIST     = 160;
-const MOUSE_PUSH     = 100;
+const PARTICLE_COUNT = 70;
+const CONNECT_DIST   = 150;
+const MOUSE_DIST     = 180;
+const MOUSE_PUSH     = 110;
 const MAX_SPEED      = 1.4;
 
 interface Particle {
@@ -18,8 +18,8 @@ function makeParticle(w: number, h: number): Particle {
     y:  Math.random() * h,
     vx: (Math.random() - 0.5) * 0.45,
     vy: (Math.random() - 0.5) * 0.45,
-    r:  Math.random() * 1.5 + 0.8,
-    a:  Math.random() * 0.45 + 0.15,
+    r:  Math.random() * 2.5 + 1.5,
+    a:  Math.random() * 0.45 + 0.35,
   };
 }
 
@@ -96,10 +96,10 @@ export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
           const dy  = p.y - q.y;
           const d   = Math.sqrt(dx * dx + dy * dy);
           if (d < CONNECT_DIST) {
-            const op = (1 - d / CONNECT_DIST) * (dark ? 0.18 : 0.09);
+            const op = (1 - d / CONNECT_DIST) * (dark ? 0.35 : 0.18);
             ctx.beginPath();
             ctx.strokeStyle = `rgba(192,123,62,${op})`;
-            ctx.lineWidth   = 0.6;
+            ctx.lineWidth   = 0.8;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(q.x, q.y);
             ctx.stroke();
@@ -108,10 +108,10 @@ export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
 
         // particle–mouse lines
         if (md < MOUSE_DIST) {
-          const op = (1 - md / MOUSE_DIST) * (dark ? 0.35 : 0.2);
+          const op = (1 - md / MOUSE_DIST) * (dark ? 0.6 : 0.35);
           ctx.beginPath();
           ctx.strokeStyle = `rgba(192,123,62,${op})`;
-          ctx.lineWidth   = 0.9;
+          ctx.lineWidth   = 1.1;
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(mouse.x, mouse.y);
           ctx.stroke();
@@ -120,7 +120,7 @@ export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
         // dot
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(192,123,62,${dark ? p.a : p.a * 0.65})`;
+        ctx.fillStyle = `rgba(192,123,62,${dark ? p.a : p.a * 0.8})`;
         ctx.fill();
       }
 

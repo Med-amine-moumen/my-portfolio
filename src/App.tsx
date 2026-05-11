@@ -204,166 +204,165 @@ function App() {
           </section>
 
           {/* ── Big Projects ──────────────────────────────────────────── */}
-          <section id="big-projects" className="py-20 px-4 max-w-5xl mx-auto border-t border-gray-200 dark:border-dark-border flex flex-col items-center">
-            <h2 className="text-3xl font-bold mb-12" data-animate>Big Projects</h2>
+          <section id="big-projects" className="py-20 px-4 max-w-5xl mx-auto border-t border-gray-200 dark:border-dark-border">
+            <h2 className="text-3xl font-bold mb-2 text-center" data-animate>My Projects</h2>
+            <p className="text-center text-gray-500 dark:text-gray-400 text-sm tracking-widest uppercase mb-12 font-medium" data-animate data-animate-delay="1">Things I've Built</p>
 
-            <div className="flex flex-col gap-8 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
               {/* E-Commerce */}
-              <div className={`${cardBase} p-8 flex flex-col lg:flex-row items-center gap-8`} data-animate {...tilt}>
-                <div className="flex-1 w-full order-2 lg:order-1 relative rounded-xl overflow-hidden border border-gray-200 dark:border-dark-border flex flex-col bg-gray-50 dark:bg-primary-black-light group shadow-inner">
-                  <div className="h-8 bg-gray-200 dark:bg-dark-card w-full flex items-center px-4 gap-1.5 border-b border-gray-200 dark:border-dark-border">
-                    <span className="w-3 h-3 rounded-full bg-red-400" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <span className="w-3 h-3 rounded-full bg-green-400" />
+              <div className={`${cardBase} flex flex-col overflow-hidden group`} data-animate {...tilt}>
+                {/* browser chrome */}
+                <div className="bg-gray-100 dark:bg-dark-card border-b border-gray-200 dark:border-dark-border flex flex-col">
+                  <div className="h-7 flex items-center px-3 gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                    <span className="ml-3 font-mono text-[9px] text-gray-400 dark:text-gray-500 truncate">ecommerce-amine.vercel.app</span>
                   </div>
-                  <div className="relative aspect-video overflow-hidden">
-                    <a href="https://ecommerce-amine.vercel.app/" target="_blank" rel="noopener noreferrer">
-                      <img src="https://api.microlink.io/?url=https://ecommerce-amine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url"
-                        alt="E-Commerce Platform"
-                        className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80'; }}
-                      />
-                    </a>
+                  <div className="relative aspect-video overflow-hidden bg-gray-50 dark:bg-primary-black-light">
+                    <img src="https://api.microlink.io/?url=https://ecommerce-amine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url"
+                      alt="E-Commerce Platform"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80'; }}
+                    />
                   </div>
                 </div>
-                <div className="flex-1 order-1 lg:order-2">
-                  <h3 className="font-bold text-2xl mb-3">Full-Stack E-Commerce Platform</h3>
-                  <p className="text-gray-500 dark:text-gray-400 mb-5 text-sm leading-relaxed">
-                    A modern e-commerce application featuring product browsing, shopping cart, and a seamless checkout experience.
+                {/* content */}
+                <div className="p-5 flex flex-col flex-grow">
+                  <h3 className="font-bold text-lg mb-1.5">Clothing E-Commerce Website</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">
+                    Full-stack e-commerce website for clothing, featuring product browsing, cart functionality, user auth, and Stripe checkout.
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {['Next.js', 'React', 'Tailwind CSS', 'MongoDB'].map(t => (
-                      <span key={t} className="px-3 py-1 font-mono text-xs rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30 hover:border-accent-base transition-colors duration-150">{t}</span>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {['React', 'Node.js', 'MongoDB', 'Express.js', 'Stripe'].map(t => (
+                      <span key={t} className="px-2.5 py-1 font-mono text-[10px] rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30">{t}</span>
                     ))}
                   </div>
-                  <a href="https://ecommerce-amine.vercel.app/" target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent-base hover:bg-accent-hover hover:scale-105 hover:shadow-[0_0_18px_rgba(192,123,62,0.35)] active:scale-95 text-white rounded-xl font-medium transition-all duration-200"
-                  >
-                    <ExternalLink className="w-4 h-4" /> Visit Live Site
-                  </a>
+                  <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-dark-border">
+                    <a href="https://ecommerce-amine.vercel.app/" target="_blank" rel="noopener noreferrer"
+                      className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-accent-base dark:hover:text-accent-light hover:bg-accent-subtle dark:hover:bg-accent-subtle-dark transition-all duration-200"
+                      title="Visit Live Site"
+                    ><ExternalLink className="w-4 h-4" /></a>
+                  </div>
                 </div>
               </div>
 
               {/* Recipe App */}
-              <div className={`${cardBase} p-8 flex flex-col lg:flex-row-reverse items-center gap-8`} data-animate data-animate-delay="1" {...tilt}>
-                <div className="flex-1 w-full relative rounded-xl overflow-hidden border border-gray-200 dark:border-dark-border flex flex-col bg-gray-50 dark:bg-primary-black-light group shadow-inner">
-                  <div className="h-8 bg-gray-200 dark:bg-dark-card w-full flex items-center px-4 gap-1.5 border-b border-gray-200 dark:border-dark-border">
-                    <span className="w-3 h-3 rounded-full bg-red-400" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <span className="w-3 h-3 rounded-full bg-green-400" />
+              <div className={`${cardBase} flex flex-col overflow-hidden group`} data-animate data-animate-delay="1" {...tilt}>
+                <div className="bg-gray-100 dark:bg-dark-card border-b border-gray-200 dark:border-dark-border flex flex-col">
+                  <div className="h-7 flex items-center px-3 gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                    <span className="ml-3 font-mono text-[9px] text-gray-400 dark:text-gray-500 truncate">recipe-app-moumen.vercel.app</span>
                   </div>
-                  <div className="relative aspect-video overflow-hidden">
-                    <a href="https://recipe-app-moumen.vercel.app/" target="_blank" rel="noopener noreferrer">
-                      <img src="https://api.microlink.io/?url=https://recipe-app-moumen.vercel.app/&screenshot=true&meta=false&embed=screenshot.url"
-                        alt="Recipe App"
-                        className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=1200&q=80'; }}
-                      />
-                    </a>
+                  <div className="relative aspect-video overflow-hidden bg-gray-50 dark:bg-primary-black-light">
+                    <img src="https://api.microlink.io/?url=https://recipe-app-moumen.vercel.app/&screenshot=true&meta=false&embed=screenshot.url"
+                      alt="Recipe App"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=1200&q=80'; }}
+                    />
                   </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-2xl mb-3">Recipe App</h3>
-                  <p className="text-gray-500 dark:text-gray-400 mb-5 text-sm leading-relaxed">
-                    A recipe discovery app that lets users browse, search, and explore a wide variety of recipes with detailed ingredients and step-by-step instructions.
+                <div className="p-5 flex flex-col flex-grow">
+                  <h3 className="font-bold text-lg mb-1.5">StudyFlow Website</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">
+                    Study management web app with task organization and a built-in Pomodoro timer to improve focus and productivity.
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {['React', 'JavaScript', 'Tailwind CSS', 'REST API'].map(t => (
-                      <span key={t} className="px-3 py-1 font-mono text-xs rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30 hover:border-accent-base transition-colors duration-150">{t}</span>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {['React', 'Node.js', 'MongoDB', 'Express.js'].map(t => (
+                      <span key={t} className="px-2.5 py-1 font-mono text-[10px] rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30">{t}</span>
                     ))}
                   </div>
-                  <a href="https://recipe-app-moumen.vercel.app/" target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent-base hover:bg-accent-hover hover:scale-105 hover:shadow-[0_0_18px_rgba(192,123,62,0.35)] active:scale-95 text-white rounded-xl font-medium transition-all duration-200"
-                  >
-                    <ExternalLink className="w-4 h-4" /> Visit Live Site
-                  </a>
+                  <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-dark-border">
+                    <a href="https://recipe-app-moumen.vercel.app/" target="_blank" rel="noopener noreferrer"
+                      className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-accent-base dark:hover:text-accent-light hover:bg-accent-subtle dark:hover:bg-accent-subtle-dark transition-all duration-200"
+                      title="Visit Live Site"
+                    ><ExternalLink className="w-4 h-4" /></a>
+                  </div>
                 </div>
               </div>
 
               {/* Surf Camp SaaS */}
-              <div className={`${cardBase} p-8 flex flex-col lg:flex-row-reverse items-center gap-8 overflow-hidden relative`} data-animate data-animate-delay="1" {...tilt}>
-                <div className="absolute top-5 -right-10 bg-accent-base text-white px-10 py-1 rotate-45 text-[10px] font-bold tracking-widest z-10 uppercase">
-                  Coming Soon
-                </div>
-                <div className="flex-1 w-full relative rounded-xl overflow-hidden border border-gray-200 dark:border-dark-border flex flex-col bg-gray-50 dark:bg-primary-black-light group shadow-inner">
-                  <div className="h-8 bg-gray-200 dark:bg-dark-card w-full flex items-center px-4 gap-1.5 border-b border-gray-200 dark:border-dark-border opacity-70">
-                    <span className="w-3 h-3 rounded-full bg-red-400" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <span className="w-3 h-3 rounded-full bg-green-400" />
+              <div className={`${cardBase} flex flex-col overflow-hidden group relative`} data-animate data-animate-delay="2" {...tilt}>
+                <div className="absolute top-4 right-4 z-10 font-mono px-2 py-0.5 text-[10px] rounded bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/30 font-bold uppercase tracking-wider">WIP</div>
+                <div className="bg-gray-100 dark:bg-dark-card border-b border-gray-200 dark:border-dark-border flex flex-col">
+                  <div className="h-7 flex items-center px-3 gap-1.5 opacity-60">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                    <span className="ml-3 font-mono text-[9px] text-gray-400 dark:text-gray-500">surf-camp.vercel.app</span>
                   </div>
-                  <div className="relative aspect-video overflow-hidden flex items-center justify-center">
+                  <div className="relative aspect-video overflow-hidden bg-gray-50 dark:bg-primary-black-light flex items-center justify-center">
                     <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
                       alt="Surf Camp SaaS"
-                      className="object-cover w-full h-full opacity-35 blur-[2px] transform group-hover:scale-105 transition-transform duration-700 grayscale"
+                      className="object-cover w-full h-full opacity-30 blur-[1px] grayscale group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-white/90 dark:bg-dark-card/90 backdrop-blur-sm p-5 rounded-xl border border-gray-200 dark:border-dark-border shadow-sm text-center">
-                        <svg className="w-10 h-10 mx-auto text-accent-base mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                        </svg>
-                        <span className="font-bold text-sm text-gray-700 dark:text-gray-200">In Development</span>
-                      </div>
+                      <span className="bg-white/90 dark:bg-dark-card/90 backdrop-blur-sm px-4 py-2 rounded-xl border border-gray-200 dark:border-dark-border text-sm font-semibold text-gray-600 dark:text-gray-300 shadow-sm">In Development</span>
                     </div>
                   </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-2xl mb-3 flex items-center gap-3">
-                    Surf Camp SaaS
-                    <span className="font-mono px-2 py-0.5 text-xs rounded bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/30">WIP</span>
-                  </h3>
-                  <p className="text-gray-500 dark:text-gray-400 mb-5 text-sm leading-relaxed">
-                    A comprehensive management platform for surf camps. Handles bookings, session scheduling, equipment tracking, instructor management, and client profiles.
+                <div className="p-5 flex flex-col flex-grow">
+                  <h3 className="font-bold text-lg mb-1.5">Surf Camp SaaS</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">
+                    Comprehensive management platform for surf camps — bookings, session scheduling, equipment tracking, and instructor management.
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1.5 mb-4">
                     {['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase'].map(t => (
-                      <span key={t} className="px-3 py-1 font-mono text-xs rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30">{t}</span>
+                      <span key={t} className="px-2.5 py-1 font-mono text-[10px] rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30">{t}</span>
                     ))}
                   </div>
-                  <div className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-dark-card-hover text-gray-400 dark:text-gray-500 rounded-xl font-medium cursor-not-allowed border border-gray-200 dark:border-dark-border">
-                    <ExternalLink className="w-4 h-4 opacity-40" /> Coming Soon
+                  <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-dark-border">
+                    <span className="p-2 rounded-lg text-gray-300 dark:text-gray-600 cursor-not-allowed" title="Coming Soon">
+                      <ExternalLink className="w-4 h-4" />
+                    </span>
                   </div>
                 </div>
               </div>
 
               {/* PoolHomies */}
-              <div className={`${cardBase} p-8 flex flex-col lg:flex-row items-center gap-8`} data-animate data-animate-delay="1" {...tilt}>
-                <div className="flex-1 w-full order-2 lg:order-1 relative rounded-xl overflow-hidden border border-gray-200 dark:border-dark-border flex flex-col bg-gray-50 dark:bg-primary-black-light group shadow-inner">
-                  <div className="h-8 bg-gray-200 dark:bg-dark-card w-full flex items-center px-4 gap-1.5 border-b border-gray-200 dark:border-dark-border">
-                    <span className="w-3 h-3 rounded-full bg-red-400" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <span className="w-3 h-3 rounded-full bg-green-400" />
-                    <span className="ml-auto font-mono text-[10px] text-gray-400 dark:text-gray-600 truncate">poolhomies.vercel.app</span>
+              <div className={`${cardBase} flex flex-col overflow-hidden group`} data-animate data-animate-delay="3" {...tilt}>
+                <div className="bg-gray-100 dark:bg-dark-card border-b border-gray-200 dark:border-dark-border flex flex-col">
+                  <div className="h-7 flex items-center px-3 gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                    <span className="ml-3 font-mono text-[9px] text-gray-400 dark:text-gray-500 truncate">poolhomies.vercel.app</span>
                   </div>
-                  <div className="relative aspect-video overflow-hidden">
-                    <a href="https://github.com/Med-amine-moumen/poolhomies" target="_blank" rel="noopener noreferrer">
-                      <img
-                        src="https://api.microlink.io/?url=https://github.com/Med-amine-moumen/poolhomies&screenshot=true&meta=false&embed=screenshot.url"
-                        alt="PoolHomies"
-                        className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1611095970980-20f304cfe37b?w=1200&q=80'; }}
-                      />
-                    </a>
+                  <div className="relative aspect-video overflow-hidden bg-gray-50 dark:bg-primary-black-light">
+                    <img
+                      src="https://api.microlink.io/?url=https://poolhomies.vercel.app/&screenshot=true&meta=false&embed=screenshot.url"
+                      alt="PoolHomies"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1611095970980-20f304cfe37b?w=1200&q=80'; }}
+                    />
                   </div>
                 </div>
-                <div className="flex-1 order-1 lg:order-2">
-                  <div className="flex items-center gap-3 mb-3">
-                    <h3 className="font-bold text-2xl">PoolHomies</h3>
-                    <span className="font-mono px-2 py-0.5 text-xs rounded bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800">Live</span>
+                <div className="p-5 flex flex-col flex-grow">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <h3 className="font-bold text-lg">PoolHomies</h3>
+                    <span className="px-1.5 py-0.5 text-[9px] font-bold rounded bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800 uppercase tracking-wide">Live</span>
                   </div>
-                  <p className="text-gray-500 dark:text-gray-400 mb-5 text-sm leading-relaxed">
-                    A real-time pool match tracker built for friend groups. Logs wins instantly, ranks players on a live animated leaderboard, tracks win streaks, and shows head-to-head records — all synced across browsers the moment a match is logged via Supabase real-time subscriptions.
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">
+                    Real-time pool match tracker for friend groups — live animated leaderboard, streak tracking, head-to-head stats, and instant match logging via Supabase subscriptions.
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1.5 mb-4">
                     {['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'].map(t => (
-                      <span key={t} className="px-3 py-1 font-mono text-xs rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30 hover:border-accent-base transition-colors duration-150">{t}</span>
+                      <span key={t} className="px-2.5 py-1 font-mono text-[10px] rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30">{t}</span>
                     ))}
                   </div>
-                  <a href="https://github.com/Med-amine-moumen/poolhomies" target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent-base hover:bg-accent-hover hover:scale-105 hover:shadow-[0_0_18px_rgba(192,123,62,0.35)] active:scale-95 text-white rounded-xl font-medium transition-all duration-200"
-                  >
-                    <FaGithub className="w-4 h-4" /> View on GitHub
-                  </a>
+                  <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-dark-border">
+                    <a href="https://github.com/Med-amine-moumen/poolhomies" target="_blank" rel="noopener noreferrer"
+                      className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-accent-base dark:hover:text-accent-light hover:bg-accent-subtle dark:hover:bg-accent-subtle-dark transition-all duration-200"
+                      title="View on GitHub"
+                    ><FaGithub className="w-4 h-4" /></a>
+                    <a href="https://poolhomies.vercel.app/" target="_blank" rel="noopener noreferrer"
+                      className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-accent-base dark:hover:text-accent-light hover:bg-accent-subtle dark:hover:bg-accent-subtle-dark transition-all duration-200"
+                      title="Visit Live Site"
+                    ><ExternalLink className="w-4 h-4" /></a>
+                  </div>
                 </div>
               </div>
 
