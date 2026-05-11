@@ -264,12 +264,12 @@ function App() {
                   </div>
                 </div>
                 <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="font-bold text-lg mb-1.5">StudyFlow Website</h3>
+                  <h3 className="font-bold text-lg mb-1.5">Recipe App</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">
-                    Study management web app with task organization and a built-in Pomodoro timer to improve focus and productivity.
+                    A community-driven recipe platform where users can add their own recipes, browse dishes shared by others, and explore a growing collection of cuisines.
                   </p>
                   <div className="flex flex-wrap gap-1.5 mb-4">
-                    {['React', 'Node.js', 'MongoDB', 'Express.js'].map(t => (
+                    {['React', 'JavaScript', 'Tailwind CSS', 'REST API'].map(t => (
                       <span key={t} className="px-2.5 py-1 font-mono text-[10px] rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30">{t}</span>
                     ))}
                   </div>
