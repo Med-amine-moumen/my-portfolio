@@ -354,10 +354,6 @@ function App() {
                     ))}
                   </div>
                   <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-dark-border">
-                    <a href="https://github.com/Med-amine-moumen/poolhomies" target="_blank" rel="noopener noreferrer"
-                      className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-accent-base dark:hover:text-accent-light hover:bg-accent-subtle dark:hover:bg-accent-subtle-dark transition-all duration-200"
-                      title="View on GitHub"
-                    ><FaGithub className="w-4 h-4" /></a>
                     <a href="https://poolhomies.vercel.app/" target="_blank" rel="noopener noreferrer"
                       className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-accent-base dark:hover:text-accent-light hover:bg-accent-subtle dark:hover:bg-accent-subtle-dark transition-all duration-200"
                       title="Visit Live Site"
