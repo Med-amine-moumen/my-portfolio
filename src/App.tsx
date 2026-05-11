@@ -112,44 +112,42 @@ function App() {
       <div className="relative z-10">
 
         {/* ── Navigation ────────────────────────────────────────────── */}
-        <nav className={`fixed z-50 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          scrolled
-            ? `top-3 left-4 right-4 rounded-2xl border shadow-xl ${darkMode ? 'bg-primary-black/92 border-dark-border shadow-black/50' : 'bg-primary-beige/95 border-primary-beige-dark shadow-gray-300/60'}`
-            : `top-0 left-0 right-0 border-b ${darkMode ? 'bg-primary-black/85 border-dark-border' : 'bg-primary-beige/85 border-primary-beige-dark'}`
-        }`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
+        <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-3xl">
+          <div className={`flex items-center justify-between h-12 px-4 rounded-2xl border backdrop-blur-xl shadow-lg transition-colors duration-300 ${
+            darkMode
+              ? 'bg-primary-black/95 border-dark-border shadow-black/60'
+              : 'bg-white/95 border-gray-200 shadow-gray-200/80'
+          }`}>
 
-              <span className="font-mono font-bold text-lg tracking-tight">
-                <span className="text-accent-base">&lt;</span>
-                Portfolio
-                <span className="text-accent-base"> /&gt;</span>
-              </span>
+            <span className="font-mono font-bold text-sm tracking-tight shrink-0">
+              <span className="text-accent-base">&lt;</span>
+              Portfolio
+              <span className="text-accent-base"> /&gt;</span>
+            </span>
 
-              <div className="hidden md:flex items-center space-x-1">
-                {sections.map(s => (
-                  <a key={s.id} href={`#${s.id}`}
-                    className="nav-link relative px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-accent-base dark:hover:text-accent-light text-gray-600 dark:text-gray-300"
-                  >{s.label}</a>
-                ))}
-              </div>
-
-              <button onClick={toggleDark}
-                className={`p-2.5 rounded-xl transition-all duration-200 hover:scale-110 active:scale-95 ${darkMode ? 'bg-dark-card border border-dark-border-soft text-accent-light hover:border-accent-base' : 'bg-white border border-gray-200 text-accent-dark hover:border-accent-base shadow-sm'}`}
-                aria-label="Toggle Dark Mode"
-              >
-                <span key={iconKey} className="theme-icon-enter block w-5 h-5">
-                  {darkMode
-                    ? <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" className="text-yellow-400" /></svg>
-                    : <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-                  }
-                </span>
-              </button>
+            <div className="hidden md:flex items-center gap-0.5">
+              {sections.map(s => (
+                <a key={s.id} href={`#${s.id}`}
+                  className="nav-link relative px-2.5 py-1.5 text-xs font-medium transition-colors duration-200 hover:text-accent-base dark:hover:text-accent-light text-gray-600 dark:text-gray-300 rounded-lg hover:bg-accent-subtle dark:hover:bg-accent-subtle-dark"
+                >{s.label}</a>
+              ))}
             </div>
+
+            <button onClick={toggleDark}
+              className={`p-1.5 rounded-lg transition-all duration-200 hover:scale-110 active:scale-95 shrink-0 ${darkMode ? 'bg-dark-card border border-dark-border-soft text-accent-light hover:border-accent-base' : 'bg-gray-100 border border-gray-200 text-accent-dark hover:border-accent-base'}`}
+              aria-label="Toggle Dark Mode"
+            >
+              <span key={iconKey} className="theme-icon-enter block w-4 h-4">
+                {darkMode
+                  ? <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" className="text-yellow-400" /></svg>
+                  : <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                }
+              </span>
+            </button>
           </div>
         </nav>
 
-        <main className="pt-20 pb-16">
+        <main className="pt-24 pb-16">
 
           {/* ── Hero ──────────────────────────────────────────────────── */}
           <section id="home" className="min-h-[85vh] flex items-center justify-center pt-16 px-4">
