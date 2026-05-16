@@ -360,6 +360,46 @@ function App() {
                 </div>
               </div>
 
+              {/* Better Call Saul */}
+              <div className={`${cardBase} flex flex-col overflow-hidden group`} data-animate data-animate-delay="4" {...tilt}>
+                <div className="bg-gray-100 dark:bg-dark-card border-b border-gray-200 dark:border-dark-border flex flex-col">
+                  <div className="h-7 flex items-center px-3 gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                    <span className="ml-3 font-mono text-[9px] text-gray-400 dark:text-gray-500 truncate">saul-good-man.vercel.app</span>
+                  </div>
+                  <div className="relative aspect-video overflow-hidden bg-gray-50 dark:bg-primary-black-light">
+                    <img
+                      src="https://api.microlink.io/?url=https://saul-good-man.vercel.app/&screenshot=true&meta=false&embed=screenshot.url"
+                      alt="Better Call Saul themed portfolio"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1200&q=80'; }}
+                    />
+                  </div>
+                </div>
+                <div className="p-5 flex flex-col flex-grow">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <h3 className="font-bold text-lg">Better Call Saul!</h3>
+                    <span className="px-1.5 py-0.5 text-[9px] font-bold rounded bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800 uppercase tracking-wide">Live</span>
+                  </div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">
+                    A cinematic single-page tribute to Saul Goodman — GSAP title-card intro, scroll-choreographed "case files" with stamp slams, a React Three Fiber inflatable Lady Liberty, an SSE live client counter, and a hover-triggered Kim Wexler outro.
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {['Next.js', 'TypeScript', 'GSAP', 'Three.js'].map(t => (
+                      <span key={t} className="px-2.5 py-1 font-mono text-[10px] rounded-md bg-accent-subtle dark:bg-accent-subtle-dark text-accent-dark dark:text-accent-light border border-accent-base/20 dark:border-accent-base/30">{t}</span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-dark-border">
+                    <a href="https://saul-good-man.vercel.app/" target="_blank" rel="noopener noreferrer"
+                      className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-accent-base dark:hover:text-accent-light hover:bg-accent-subtle dark:hover:bg-accent-subtle-dark transition-all duration-200"
+                      title="Visit Live Site"
+                    ><ExternalLink className="w-4 h-4" /></a>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </section>
 
