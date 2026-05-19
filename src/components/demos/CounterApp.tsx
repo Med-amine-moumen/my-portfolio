@@ -1,18 +1,22 @@
-import { useState } from 'react'
-import { Plus, Minus, RotateCcw } from 'lucide-react'
+'use client';
 
-const CounterApp = () => {
-  const [count, setCount] = useState(0)
+import { useState } from 'react';
+import { Plus, Minus, RotateCcw } from 'lucide-react';
 
-  const increment = () => setCount(count + 1)
-  const decrement = () => setCount(count - 1)
-  const reset = () => setCount(0)
+export default function CounterApp() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  const reset = () => setCount(0);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-8 flex items-center justify-center">
       <div className="max-w-lg w-full">
-        <h1 className="text-4xl font-bold text-white mb-8 text-center">🔢 Counter App</h1>
-        
+        <h1 className="text-4xl font-bold text-white mb-8 text-center">
+          🔢 Counter App
+        </h1>
+
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-12 shadow-2xl text-center">
           <div className="mb-8">
             <div className="text-8xl font-bold text-white mb-4">{count}</div>
@@ -22,20 +26,26 @@ const CounterApp = () => {
           <div className="flex gap-4 justify-center mb-6">
             <button
               onClick={decrement}
+              type="button"
+              aria-label="Decrement"
               className="p-6 bg-red-500 hover:bg-red-600 text-white rounded-xl transition-all hover:scale-110 shadow-lg"
             >
               <Minus className="w-8 h-8" />
             </button>
-            
+
             <button
               onClick={reset}
+              type="button"
+              aria-label="Reset"
               className="p-6 bg-gray-500 hover:bg-gray-600 text-white rounded-xl transition-all hover:scale-110 shadow-lg"
             >
               <RotateCcw className="w-8 h-8" />
             </button>
-            
+
             <button
               onClick={increment}
+              type="button"
+              aria-label="Increment"
               className="p-6 bg-green-500 hover:bg-green-600 text-white rounded-xl transition-all hover:scale-110 shadow-lg"
             >
               <Plus className="w-8 h-8" />
@@ -59,7 +69,5 @@ const CounterApp = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-export default CounterApp

@@ -1,0 +1,175 @@
+{
+  "Metadata": {
+    "siteName": "Mohamed Amine Moumen",
+    "jobTitle": "Développeur Full-Stack",
+    "home": {
+      "title": "Mohamed Amine Moumen — Développeur Full-Stack",
+      "description": "Portfolio de Mohamed Amine Moumen, développeur full-stack. Back-ends propres et évolutifs, front-ends fluides avec les technologies web modernes."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Articles techniques sur le développement web : Next.js, déploiement, bases de données et retours d'expérience."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Discutons de votre projet : prenez rendez-vous, écrivez-moi ou retrouvez-moi sur les réseaux."
+    },
+    "projectFallbackDescription": "Étude de cas détaillée d'un projet réalisé par Mohamed Amine Moumen."
+  },
+  "Nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "blog": "Blog",
+    "contact": "Contact",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "Hero": {
+    "greeting": "Bonjour, je suis",
+    "role": "Développeur Full-Stack — je conçois des back-ends propres et évolutifs et des front-ends fluides avec les technologies web modernes.",
+    "viewWork": "Voir mes projets",
+    "contactMe": "Me contacter",
+    "resume": "CV"
+  },
+  "About": {
+    "title": "À propos",
+    "body": "Développeur passionné, je me concentre sur des expériences web interactives et accessibles. Je cherche en permanence à progresser et à livrer des solutions de qualité."
+  },
+  "Projects": {
+    "title": "Mes projets",
+    "subtitle": "Ce que j'ai construit",
+    "visitLive": "Voir le site en ligne",
+    "caseStudy": "Lire l'étude de cas",
+    "comingSoon": "Bientôt disponible",
+    "inDevelopment": "En développement",
+    "badgeWip": "EN COURS",
+    "badgeLive": "EN LIGNE",
+    "items": {
+      "ecommerce": {
+        "title": "Site e-commerce de vêtements",
+        "description": "Site e-commerce full-stack pour la vente de vêtements : navigation produits, panier, authentification et paiement Stripe."
+      },
+      "recipe-app": {
+        "title": "Application de recettes",
+        "description": "Plateforme communautaire de recettes : chacun publie ses recettes, parcourt celles des autres et explore une collection de cuisines qui s'enrichit."
+      },
+      "surf-camp": {
+        "title": "Surf Camp SaaS",
+        "description": "Plateforme complète de gestion de surf camps — réservations, planning des sessions, suivi du matériel et gestion des moniteurs."
+      },
+      "poolhomies": {
+        "title": "PoolHomies",
+        "description": "Suivi de parties de billard en temps réel entre amis — classement animé en direct, séries, statistiques en face-à-face et enregistrement instantané via les abonnements Supabase."
+      },
+      "better-call-saul": {
+        "title": "Better Call Saul !",
+        "description": "Hommage cinématographique d'une seule page à Saul Goodman — intro carton-titre GSAP, « dossiers » chorégraphiés au défilement avec tampons, Statue de la Liberté gonflable en React Three Fiber, compteur de visiteurs en direct (SSE) et outro Kim Wexler au survol."
+      },
+      "habit-tracker": {
+        "title": "Habit Tracker",
+        "description": "Suivi d'habitudes avec gamification et analytics : séries, badges, statistiques de progression. Authentification, base de données Postgres (Neon) et UI shadcn."
+      },
+      "portfolio-v2": {
+        "title": "Portfolio v2",
+        "description": "Ce site. Migration de Vite vers Next.js pour le SSR et le SEO : rendu côté serveur, bilingue FR/EN et contenu piloté par MDX."
+      }
+    }
+  },
+  "MiniProjects": {
+    "title": "Mini-projets",
+    "liveDemo": "Démo en direct",
+    "items": {
+      "task-manager": {
+        "title": "Gestionnaire de tâches",
+        "description": "Outil de productivité pour gérer des tâches : ajout, suppression et bascule terminé/à faire. Construit avec les hooks React pour la gestion d'état."
+      },
+      "rock-paper-scissors": {
+        "title": "Pierre-Papier-Ciseaux (Python)",
+        "description": "Jeu interactif Pierre-Papier-Ciseaux développé en Python avec interface en ligne de commande. Comprend un système de score, plusieurs modes de jeu et une IA intelligente."
+      },
+      "calculator": {
+        "title": "Calculatrice",
+        "description": "Calculatrice complète avec les opérations arithmétiques de base, un design épuré et une disposition de boutons responsive."
+      },
+      "counter": {
+        "title": "Compteur",
+        "description": "Compteur interactif illustrant la gestion d'état React : incrémenter, décrémenter et réinitialiser."
+      }
+    }
+  },
+  "Skills": {
+    "title": "Compétences",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Outils"
+    }
+  },
+  "Contact": {
+    "title": "Contact",
+    "intro": "N'hésitez pas à me contacter pour une collaboration, une opportunité ou simplement pour dire bonjour !",
+    "linkedinButton": "Écrivez-moi sur LinkedIn"
+  },
+  "WorkTogether": {
+    "title": "Travaillons ensemble",
+    "body": "Disponible pour des missions freelance, des postes à temps plein ou simplement un projet sympa. Discutons-en.",
+    "cta": "Prendre contact"
+  },
+  "ContactPage": {
+    "title": "Travaillons ensemble",
+    "intro": "Une idée de projet, une opportunité, ou juste envie d'échanger ? Choisissez le canal qui vous convient.",
+    "scheduleTitle": "Réserver un créneau",
+    "calendlyMissing": "Le lien de prise de rendez-vous n'est pas encore configuré. Renseignez la variable d'environnement NEXT_PUBLIC_CALENDLY_URL.",
+    "emailTitle": "M'écrire un e-mail",
+    "emailButton": "Envoyer un e-mail",
+    "emailSubject": "Prise de contact depuis le portfolio",
+    "socialTitle": "Sur les réseaux",
+    "cvTitle": "Mon CV",
+    "downloadCvFr": "Télécharger le CV (FR)",
+    "downloadCvEn": "Download CV (EN)"
+  },
+  "Blog": {
+    "title": "Blog",
+    "intro": "Notes techniques et retours d'expérience sur le développement web.",
+    "allTag": "Tous",
+    "filterLabel": "Filtrer par tag",
+    "readingTime": "{minutes} min de lecture",
+    "draftBadge": "Brouillon",
+    "empty": "Aucun article pour le moment. Revenez bientôt !",
+    "backToBlog": "Retour au blog",
+    "publishedOn": "Publié le {date}",
+    "updatedOn": "Mis à jour le {date}"
+  },
+  "ProjectPage": {
+    "backToProjects": "Retour aux projets",
+    "liveSite": "Site en ligne",
+    "sourceCode": "Code source",
+    "onThisPage": "Sur cette page"
+  },
+  "Footer": {
+    "rights": "Tous droits réservés.",
+    "builtWith": "Conçu avec Next.js · Déployé sur Vercel",
+    "quickNav": "Navigation",
+    "language": "Langue"
+  },
+  "Theme": {
+    "toggle": "Basculer le mode sombre"
+  },
+  "LanguageSwitcher": {
+    "label": "Changer de langue",
+    "fr": "Français",
+    "en": "English"
+  },
+  "Common": {
+    "scrollToTop": "Remonter en haut",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "E-mail"
+  },
+  "NotFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "back": "Retour à l'accueil"
+  }
+}

@@ -1,0 +1,48 @@
+---
+title: "Habit Tracker"
+slug: "habit-tracker"
+description: "Habit tracker with gamification and analytics. Next.js 14, TypeScript, Postgres (Neon), Prisma, NextAuth.js and shadcn/ui."
+date: "2025-11-03"
+tags: ["Next.js 14", "TypeScript", "Prisma", "Postgres", "NextAuth.js"]
+coverImage: "/projects/habit-tracker/cover.png"
+locale: "en"
+draft: false
+---
+
+{/* TODO: fill in — English placeholder. The French version is the source of truth; translate it here. */}
+
+## The Problem
+
+{/* TODO: fill in — habit apps lose users in days; reward consistency (streaks, badges) and show progress over time. */}
+
+## Architecture
+
+- Next.js 14 (App Router), strict TypeScript.
+- PostgreSQL on **Neon**, accessed via **Prisma**.
+- **NextAuth.js** for authentication.
+- **shadcn/ui** + Tailwind CSS.
+- Data model: `User`, `Habit`, `HabitEntry`; streaks/stats derived on read.
+
+{/* TODO: fill in — exact Prisma schema */}
+
+## Technical decisions
+
+### Gamification
+
+{/* TODO: fill in — streaks, milestone badges, weekly goals; streaks derived from entries, not a stored counter. */}
+
+### Analytics
+
+{/* TODO: fill in — completion rate, calendar heatmap, 30/90-day trends; aggregations in Server Components. */}
+
+### Auth + Prisma on serverless
+
+{/* TODO: fill in — NextAuth Prisma adapter; Neon connection pooler; DATABASE_URL vs DIRECT_URL. */}
+
+## Result
+
+{/* TODO: fill in — current status, screenshots, usage metrics. */}
+
+## What I'd do differently
+
+{/* TODO: fill in — technical debt, modelling choices to revisit. */}

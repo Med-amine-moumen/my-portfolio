@@ -1,0 +1,74 @@
+---
+title: "Ce portfolio (v2) — migration Vite → Next.js"
+slug: "portfolio-v2"
+description: "L'étude de cas de ce site lui-même : pourquoi et comment j'ai migré un portfolio Vite/React SPA vers Next.js pour le SSR, le SEO et un contenu bilingue piloté par MDX."
+date: "2026-05-18"
+tags: ["Next.js", "TypeScript", "next-intl", "MDX", "SSR"]
+coverImage: "/projects/portfolio-v2/cover.png"
+locale: "fr"
+draft: false
+---
+
+## Le problème
+
+La v1 était une SPA Vite + React : un seul `index.html` avec `<div id="root">`,
+tout rendu côté client. Conséquences :
+
+- **SEO faible** : le HTML servi était quasi vide ; les crawlers voyaient un
+  document sans contenu avant exécution du JS.
+- **Pas de métadonnées par page** : un seul `<title>`, pas d'OpenGraph utile.
+- **Aucun support multilingue** ni contenu structuré (projets, articles).
+
+## L'architecture
+
+- **Next.js (App Router)** : chaque page rendue côté serveur, HTML complet
+  livré au crawler.
+- **next-intl** : routage `app/[locale]/...`, middleware, deux locales **FR
+  (par défaut) et EN**, `/` redirigé en 308 vers `/fr`.
+- **Contenu MDX** : études de cas projets et articles de blog en
+  `content/**/<slug>.<locale>.mdx`, frontmatter + reading-time.
+- **Server Components par défaut**, îlots `"use client"` uniquement aux
+  feuilles interactives (particules canvas, tilt 3D, toggle thème, menu mobile).
+
+{/* TODO: fill in — arborescence détaillée et schéma de rendu */}
+
+## Décisions techniques
+
+### SSR pour le SEO
+
+Le cœur de la migration : passer d'un rendu client à un rendu serveur. Chaque
+page expose désormais `<title>`, `<meta description>`, `hreflang` et JSON-LD, et
+le `View Source` montre le contenu réel (nom, hero, titres de projets).
+
+### Trilingue → bilingue
+
+Le périmètre initial incluait l'arabe (RTL). Décision de **réduire à FR/EN**
+pour livrer plus vite : pas de logique `dir="rtl"`, pas de police arabe,
+`hreflang` limité à `fr`/`en`.
+
+### Contenu piloté par MDX
+
+Séparer le contenu du code : ajouter un projet ou un article = créer un fichier
+MDX, sans toucher aux composants. `gray-matter` pour le frontmatter,
+`next-mdx-remote` pour le rendu serveur, `reading-time` pour l'estimation.
+
+### Fidélité visuelle
+
+Contrainte forte : **ne rien redessiner**. Mêmes couleurs, polices, animations.
+Le thème Tailwind v4 (`@theme`) et les keyframes CSS ont été portés tels quels ;
+le dark mode `localStorage` a été remplacé par `next-themes` (SSR-safe, sans
+flash).
+
+{/* TODO: fill in — pièges rencontrés pendant la migration (hydratation, params Promise Next 15, etc.) */}
+
+## Résultat
+
+- HTML rendu côté serveur sur toutes les pages, métadonnées uniques par page.
+- Site bilingue avec switch de langue conservant le chemin courant.
+- Pipeline de contenu : projets + blog en MDX, RSS, sitemap, OG images.
+
+{/* TODO: fill in — scores Lighthouse réels après déploiement Vercel */}
+
+## Ce que je referais différemment
+
+{/* TODO: fill in — ce qui aurait pu être plus simple, arbitrages regrettés */}

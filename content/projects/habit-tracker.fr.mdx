@@ -1,0 +1,62 @@
+---
+title: "Habit Tracker"
+slug: "habit-tracker"
+description: "Suivi d'habitudes avec gamification et analytics. Next.js 14, TypeScript, Postgres (Neon), Prisma, NextAuth.js et shadcn/ui."
+date: "2025-11-03"
+tags: ["Next.js 14", "TypeScript", "Prisma", "Postgres", "NextAuth.js"]
+coverImage: "/projects/habit-tracker/cover.png"
+locale: "fr"
+draft: false
+---
+
+## Le problème
+
+Les apps de suivi d'habitudes décrochent au bout de quelques jours : pas de
+feedback, pas de raison de revenir. Je voulais une app où la **régularité est
+récompensée** (séries, badges) et où l'on **voit sa progression** dans le temps.
+
+{/* TODO: fill in — public visé, périmètre v1 vs idées futures */}
+
+## L'architecture
+
+- **Framework** : Next.js 14 (App Router), TypeScript strict.
+- **Base de données** : PostgreSQL hébergé sur **Neon**, accédé via **Prisma**.
+- **Authentification** : **NextAuth.js** (sessions, comptes utilisateurs).
+- **UI** : composants **shadcn/ui** + Tailwind CSS.
+- **Modèle de données** : `User`, `Habit`, `HabitEntry` (une coche par jour),
+  dérivation des séries et statistiques à la lecture.
+
+{/* TODO: fill in — schéma Prisma exact + relations */}
+
+## Décisions techniques
+
+### Gamification
+
+Séries (« streaks »), badges de paliers et objectifs hebdomadaires. Le calcul
+des séries se fait à partir des `HabitEntry` plutôt que d'un compteur stocké :
+plus simple à garder cohérent, pas de dérive d'état.
+
+{/* TODO: fill in — règles exactes de streak (tolérance jour manqué ?) et liste des badges */}
+
+### Analytics
+
+Vues d'agrégation : taux de complétion par habitude, heatmap de calendrier,
+tendances sur 30/90 jours. Agrégations calculées côté serveur (Server
+Components) pour garder le client léger.
+
+{/* TODO: fill in — requêtes d'agrégation et choix de visualisation */}
+
+### Auth + Prisma sur serverless
+
+NextAuth.js avec l'adaptateur Prisma ; attention au pooling de connexions
+Postgres en environnement serverless (Neon propose un pooler dédié).
+
+{/* TODO: fill in — config Neon pooler + DATABASE_URL vs DIRECT_URL */}
+
+## Résultat
+
+{/* TODO: fill in — état actuel (déployé ? URL ?), captures, métriques d'usage */}
+
+## Ce que je referais différemment
+
+{/* TODO: fill in — dette technique, choix de modélisation à revoir */}

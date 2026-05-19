@@ -1,0 +1,51 @@
+---
+title: "This portfolio (v2) — Vite → Next.js migration"
+slug: "portfolio-v2"
+description: "The case study of this site itself: why and how I migrated a Vite/React SPA portfolio to Next.js for SSR, SEO and bilingual MDX-driven content."
+date: "2026-05-18"
+tags: ["Next.js", "TypeScript", "next-intl", "MDX", "SSR"]
+coverImage: "/projects/portfolio-v2/cover.png"
+locale: "en"
+draft: false
+---
+
+{/* TODO: fill in — English placeholder. The French version is the source of truth; translate it here. */}
+
+## The Problem
+
+{/* TODO: fill in — v1 was a Vite/React SPA: empty HTML shell, weak SEO, no per-page metadata, no i18n or structured content. */}
+
+## Architecture
+
+- Next.js (App Router) — server-rendered pages, full HTML to crawlers.
+- next-intl — `app/[locale]/...` routing, FR (default) + EN, `/` → 308 `/fr`.
+- MDX content in `content/**/<slug>.<locale>.mdx` with frontmatter + reading-time.
+- Server Components by default; `"use client"` only at interactive leaves.
+
+{/* TODO: fill in — detailed tree + rendering diagram */}
+
+## Technical decisions
+
+### SSR for SEO
+
+{/* TODO: fill in — client → server rendering; per-page title/description/hreflang/JSON-LD; real content in View Source. */}
+
+### Trilingual → bilingual
+
+{/* TODO: fill in — dropped Arabic/RTL to ship faster; hreflang limited to fr/en. */}
+
+### MDX-driven content
+
+{/* TODO: fill in — content/code separation; gray-matter + next-mdx-remote + reading-time. */}
+
+### Visual fidelity
+
+{/* TODO: fill in — no redesign; ported Tailwind v4 @theme + keyframes verbatim; localStorage dark mode → next-themes. */}
+
+## Result
+
+{/* TODO: fill in — SSR HTML everywhere, unique metadata, bilingual switch, MDX/RSS/sitemap/OG pipeline; real Lighthouse scores. */}
+
+## What I'd do differently
+
+{/* TODO: fill in */}

@@ -1,36 +1,48 @@
-import { useState } from 'react'
-import { Plus, Trash2, Check } from 'lucide-react'
+'use client';
 
-const TodoApp = () => {
-  const [todos, setTodos] = useState([
+import { useState, type FormEvent } from 'react';
+import { Plus, Trash2, Check } from 'lucide-react';
+
+interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+
+export default function TodoApp() {
+  const [todos, setTodos] = useState<Todo[]>([
     { id: 1, text: 'Learn React', completed: false },
     { id: 2, text: 'Build Portfolio', completed: true },
-  ])
-  const [input, setInput] = useState('')
+  ]);
+  const [input, setInput] = useState('');
 
-  const addTodo = (e) => {
-    e.preventDefault()
+  const addTodo = (e: FormEvent) => {
+    e.preventDefault();
     if (input.trim()) {
-      setTodos([...todos, { id: Date.now(), text: input, completed: false }])
-      setInput('')
+      setTodos([...todos, { id: Date.now(), text: input, completed: false }]);
+      setInput('');
     }
-  }
+  };
 
-  const toggleTodo = (id) => {
-    setTodos(todos.map(todo => 
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
-    ))
-  }
+  const toggleTodo = (id: number) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+      ),
+    );
+  };
 
-  const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id))
-  }
+  const deleteTodo = (id: number) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-8">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-4xl font-bold text-white mb-8 text-center">✅ Task Manager</h1>
-        
+        <h1 className="text-4xl font-bold text-white mb-8 text-center">
+          ✅ Task Manager
+        </h1>
+
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-2xl">
           <form onSubmit={addTodo} className="flex gap-2 mb-6">
             <input
@@ -49,24 +61,34 @@ const TodoApp = () => {
           </form>
 
           <div className="space-y-3">
-            {todos.map(todo => (
+            {todos.map((todo) => (
               <div
                 key={todo.id}
                 className="flex items-center gap-3 bg-white/10 p-4 rounded-lg hover:bg-white/20 transition-colors"
               >
                 <button
                   onClick={() => toggleTodo(todo.id)}
+                  type="button"
+                  aria-label="Toggle complete"
                   className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
-                    todo.completed ? 'bg-green-500 border-green-500' : 'border-white/50'
+                    todo.completed
+                      ? 'bg-green-500 border-green-500'
+                      : 'border-white/50'
                   }`}
                 >
                   {todo.completed && <Check className="w-4 h-4 text-white" />}
                 </button>
-                <span className={`flex-1 text-white ${todo.completed ? 'line-through opacity-60' : ''}`}>
+                <span
+                  className={`flex-1 text-white ${
+                    todo.completed ? 'line-through opacity-60' : ''
+                  }`}
+                >
                   {todo.text}
                 </span>
                 <button
                   onClick={() => deleteTodo(todo.id)}
+                  type="button"
+                  aria-label="Delete task"
                   className="p-2 hover:bg-red-500/20 rounded-lg transition-colors"
                 >
                   <Trash2 className="w-5 h-5 text-red-400" />
@@ -76,12 +98,10 @@ const TodoApp = () => {
           </div>
 
           <div className="mt-6 pt-6 border-t border-white/20 text-center text-white/60">
-            {todos.filter(t => !t.completed).length} tasks remaining
+            {todos.filter((t) => !t.completed).length} tasks remaining
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-export default TodoApp

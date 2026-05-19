@@ -1,33 +1,47 @@
+'use client';
+
 import { useEffect, useRef } from 'react';
+import { useTheme } from 'next-themes';
 
 const PARTICLE_COUNT = 70;
-const CONNECT_DIST   = 150;
-const MOUSE_DIST     = 180;
-const MOUSE_PUSH     = 110;
-const MAX_SPEED      = 1.4;
+const CONNECT_DIST = 150;
+const MOUSE_DIST = 180;
+const MOUSE_PUSH = 110;
+const MAX_SPEED = 1.4;
 
 interface Particle {
-  x: number; y: number;
-  vx: number; vy: number;
-  r: number; a: number;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  r: number;
+  a: number;
 }
 
 function makeParticle(w: number, h: number): Particle {
   return {
-    x:  Math.random() * w,
-    y:  Math.random() * h,
+    x: Math.random() * w,
+    y: Math.random() * h,
     vx: (Math.random() - 0.5) * 0.45,
     vy: (Math.random() - 0.5) * 0.45,
-    r:  Math.random() * 2.5 + 1.5,
-    a:  Math.random() * 0.45 + 0.35,
+    r: Math.random() * 2.5 + 1.5,
+    a: Math.random() * 0.45 + 0.35,
   };
 }
 
-export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
+/**
+ * Interactive canvas particle network. Ported from the original Vite
+ * component; the `darkMode` prop was replaced by next-themes so it stays
+ * an isolated client island (the rest of the page is server-rendered).
+ */
+export function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const darkRef   = useRef(darkMode);
+  const { resolvedTheme } = useTheme();
+  const darkRef = useRef(false);
 
-  useEffect(() => { darkRef.current = darkMode; }, [darkMode]);
+  useEffect(() => {
+    darkRef.current = resolvedTheme === 'dark';
+  }, [resolvedTheme]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -36,25 +50,31 @@ export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
     if (!ctx) return;
 
     const resize = () => {
-      canvas.width  = window.innerWidth;
+      canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
     resize();
     window.addEventListener('resize', resize, { passive: true });
 
     const mouse = { x: -9999, y: -9999 };
-    const onMove = (e: MouseEvent) => { mouse.x = e.clientX; mouse.y = e.clientY; };
-    const onLeave = () => { mouse.x = -9999; mouse.y = -9999; };
-    window.addEventListener('mousemove', onMove,  { passive: true });
+    const onMove = (e: MouseEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+    const onLeave = () => {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    };
+    window.addEventListener('mousemove', onMove, { passive: true });
     window.addEventListener('mouseleave', onLeave, { passive: true });
 
     const pts: Particle[] = Array.from({ length: PARTICLE_COUNT }, () =>
-      makeParticle(canvas.width, canvas.height)
+      makeParticle(canvas.width, canvas.height),
     );
 
-    let raf: number;
+    let raf = 0;
 
-    function tick() {
+    const tick = () => {
       const W = canvas.width;
       const H = canvas.height;
       const dark = darkRef.current;
@@ -67,7 +87,7 @@ export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
         // mouse repulsion
         const mdx = p.x - mouse.x;
         const mdy = p.y - mouse.y;
-        const md  = Math.sqrt(mdx * mdx + mdy * mdy);
+        const md = Math.sqrt(mdx * mdx + mdy * mdy);
         if (md < MOUSE_PUSH && md > 0) {
           const f = ((MOUSE_PUSH - md) / MOUSE_PUSH) * 0.018;
           p.vx += (mdx / md) * f;
@@ -76,7 +96,10 @@ export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
 
         // speed cap + damping
         const spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
-        if (spd > MAX_SPEED) { p.vx = (p.vx / spd) * MAX_SPEED; p.vy = (p.vy / spd) * MAX_SPEED; }
+        if (spd > MAX_SPEED) {
+          p.vx = (p.vx / spd) * MAX_SPEED;
+          p.vy = (p.vy / spd) * MAX_SPEED;
+        }
         p.vx *= 0.992;
         p.vy *= 0.992;
 
@@ -91,15 +114,15 @@ export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
 
         // particle–particle lines
         for (let j = i + 1; j < pts.length; j++) {
-          const q   = pts[j];
-          const dx  = p.x - q.x;
-          const dy  = p.y - q.y;
-          const d   = Math.sqrt(dx * dx + dy * dy);
+          const q = pts[j];
+          const dx = p.x - q.x;
+          const dy = p.y - q.y;
+          const d = Math.sqrt(dx * dx + dy * dy);
           if (d < CONNECT_DIST) {
             const op = (1 - d / CONNECT_DIST) * (dark ? 0.35 : 0.18);
             ctx.beginPath();
             ctx.strokeStyle = `rgba(192,123,62,${op})`;
-            ctx.lineWidth   = 0.8;
+            ctx.lineWidth = 0.8;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(q.x, q.y);
             ctx.stroke();
@@ -111,7 +134,7 @@ export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
           const op = (1 - md / MOUSE_DIST) * (dark ? 0.6 : 0.35);
           ctx.beginPath();
           ctx.strokeStyle = `rgba(192,123,62,${op})`;
-          ctx.lineWidth   = 1.1;
+          ctx.lineWidth = 1.1;
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(mouse.x, mouse.y);
           ctx.stroke();
@@ -125,7 +148,7 @@ export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
       }
 
       raf = requestAnimationFrame(tick);
-    }
+    };
 
     tick();
 
@@ -140,6 +163,7 @@ export function ParticleBackground({ darkMode }: { darkMode: boolean }) {
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
       className="fixed inset-0 z-0 pointer-events-none"
     />
   );

@@ -1,0 +1,55 @@
+---
+title: "Clothing E-Commerce Platform"
+slug: "ecommerce"
+description: "Full-stack e-commerce store: catalog, cart, auth and Stripe checkout. Built with Next.js and MongoDB Atlas, deployed on Vercel."
+date: "2025-09-12"
+tags: ["Next.js", "MongoDB Atlas", "Stripe", "Vercel"]
+coverImage: "/projects/ecommerce/cover.png"
+locale: "en"
+draft: false
+---
+
+{/* TODO: fill in — this is the English placeholder. The French version is the source of truth; translate it here. */}
+
+## The Problem
+
+A real online store rather than a demo: product browsing, a persistent cart,
+customer accounts and real payments — and it had to be **production-deployable**,
+not just "works on my machine".
+
+{/* TODO: fill in */}
+
+## Architecture
+
+- Next.js (App Router) — server-rendered product pages, API routes for cart and checkout.
+- MongoDB: local in development, **MongoDB Atlas** in production.
+- Stripe Checkout with a confirmation webhook.
+- Deployed on Vercel.
+
+{/* TODO: fill in — collection schema diagram */}
+
+## Technical decisions
+
+### Missing environment variables
+
+{/* TODO: fill in — local worked, production build broke; MONGODB_URI / Stripe keys never set in Vercel. */}
+
+### SSR `localStorage` guards
+
+{/* TODO: fill in — cart in localStorage crashed during SSR; only touch localStorage inside useEffect. */}
+
+### MongoDB local → Atlas migration
+
+{/* TODO: fill in — mongodb+srv URI, IP allowlist, cached connection for serverless pooling. */}
+
+### Vercel vs. Netlify
+
+{/* TODO: fill in — chose Vercel for first-class Next.js integration (serverless, preview deploys). */}
+
+## Result
+
+{/* TODO: fill in — working production store + reproducible deploy pipeline; real metrics. */}
+
+## What I'd do differently
+
+{/* TODO: fill in — set up .env.example and Atlas config from the first commit; extract a testable cart store. */}

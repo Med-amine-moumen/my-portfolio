@@ -1,0 +1,91 @@
+---
+title: "Plateforme e-commerce de vêtements"
+slug: "ecommerce"
+description: "Boutique e-commerce full-stack : catalogue, panier, authentification et paiement Stripe. Construite avec Next.js et MongoDB Atlas, déployée sur Vercel."
+date: "2025-09-12"
+tags: ["Next.js", "MongoDB Atlas", "Stripe", "Vercel"]
+coverImage: "/projects/ecommerce/cover.png"
+locale: "fr"
+draft: false
+---
+
+## Le problème
+
+Je voulais une vraie boutique en ligne, pas une démo : navigation produits, panier
+persistant, comptes clients et paiement réel. L'objectif n'était pas seulement
+« que ça marche en local », mais que ce soit **déployable et fiable en production**.
+
+{/* TODO: fill in — préciser le périmètre fonctionnel exact (catégories, recherche, gestion stock ?) */}
+
+## L'architecture
+
+- **Front + back** : application Next.js (App Router) — pages produits rendues côté
+  serveur, routes API pour le panier et le checkout.
+- **Base de données** : MongoDB. En développement, une instance locale ;
+  en production, **MongoDB Atlas**.
+- **Paiement** : Stripe Checkout, avec webhook pour confirmer la commande.
+- **Déploiement** : Vercel.
+
+{/* TODO: fill in — schéma des collections (products, users, orders) et modèle du panier */}
+
+## Décisions techniques
+
+### Variables d'environnement manquantes
+
+Le premier déploiement a échoué « sans raison » : en local tout marchait, en
+production le build cassait. La cause : des variables d'environnement
+(`MONGODB_URI`, clés Stripe) présentes dans mon `.env.local` mais **jamais
+déclarées dans Vercel**. Leçon retenue : tenir un `.env.example` à jour et
+considérer toute variable absente comme une erreur de build explicite plutôt
+qu'un `undefined` silencieux.
+
+### Garde SSR sur `localStorage`
+
+Le panier était stocké dans `localStorage`. En SSR, `window` et `localStorage`
+n'existent pas : le serveur plantait à la première lecture. La correction :
+n'accéder à `localStorage` que dans un `useEffect` (donc côté client), initialiser
+l'état avec une valeur neutre, puis hydrater depuis le stockage après le montage.
+
+```ts
+const [cart, setCart] = useState<CartItem[]>([]);
+
+useEffect(() => {
+  const saved = localStorage.getItem("cart");
+  if (saved) setCart(JSON.parse(saved));
+}, []);
+```
+
+### Migration MongoDB local → Atlas
+
+En local, la connexion était `mongodb://localhost:27017`. Atlas impose une URI
+`mongodb+srv://`, l'autorisation des IP (ou `0.0.0.0/0` pour Vercel dont les IP
+sont dynamiques) et un utilisateur dédié. J'ai aussi dû gérer le **pooling de
+connexions** en environnement serverless : sans mise en cache de la connexion,
+chaque invocation ouvrait une nouvelle connexion et saturait le cluster.
+
+{/* TODO: fill in — coller le helper de connexion mis en cache (global._mongo) */}
+
+### Vercel vs Netlify
+
+J'ai hésité entre les deux. Netlify était familier, mais l'application repose sur
+des routes API Next.js et du rendu serveur ; **Vercel** offrait l'intégration la
+plus directe avec Next (fonctions serverless, variables d'environnement par
+environnement, preview deploys par PR) sans configuration d'adaptateur.
+J'ai tranché pour Vercel.
+
+## Résultat
+
+- Boutique fonctionnelle en production : catalogue, panier persistant,
+  authentification et paiement Stripe de bout en bout.
+- Pipeline de déploiement reproductible (preview par branche, prod sur `main`).
+
+{/* TODO: fill in — métriques réelles : nombre de produits, temps de build, Lighthouse, conversions de test */}
+
+## Ce que je referais différemment
+
+- Mettre en place le `.env.example` et la configuration Atlas **dès le premier
+  commit**, pas après le premier crash de déploiement.
+- Extraire la logique panier dans un store testable plutôt que des accès
+  `localStorage` dispersés.
+
+{/* TODO: fill in — autres regrets / dette technique à mentionner */}

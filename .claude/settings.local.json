@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(git --version)",
+      "Bash(mkdir -p _legacy_vite)",
+      "Bash(git mv *)",
+      "Bash(rm -rf dist node_modules)",
+      "PowerShell(Get-Process *)"
+    ]
+  }
+}

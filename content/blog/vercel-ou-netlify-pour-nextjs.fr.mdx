@@ -1,0 +1,49 @@
+---
+title: "Vercel ou Netlify pour Next.js : retour d'expérience"
+slug: "vercel-ou-netlify-pour-nextjs"
+description: "J'ai hésité entre Vercel et Netlify pour déployer un projet Next.js full-stack. Voici les critères qui ont tranché, basés sur mon expérience réelle."
+date: "2026-05-12"
+tags: ["Vercel", "Netlify", "Next.js", "Déploiement"]
+coverImage: "/blog/vercel-ou-netlify-pour-nextjs/cover.png"
+locale: "fr"
+draft: true
+---
+
+> Brouillon — plan détaillé à étoffer.
+
+## Le contexte
+
+- Projet : la boutique e-commerce (Next.js, routes API, MongoDB Atlas, Stripe).
+- Besoin : rendu serveur + fonctions backend + variables d'environnement par
+  environnement + déploiements de preview.
+
+{/* TODO: fill in — rappeler la stack et les contraintes exactes */}
+
+## Les critères de comparaison
+
+- Intégration Next.js native (App Router, fonctions serverless).
+- Variables d'environnement et secrets.
+- Preview deploys par branche / PR.
+- Logs, observabilité, simplicité de configuration.
+- Limites du plan gratuit.
+
+{/* TODO: fill in — tableau comparatif point par point */}
+
+## Mon expérience concrète
+
+- Ce qui a marché du premier coup.
+- Ce qui a cassé (variables manquantes — voir l'article Atlas/env).
+- Le temps de configuration réel de chaque plateforme.
+
+{/* TODO: fill in — captures, messages d'erreur réels, ce qui m'a fait pencher */}
+
+## Ce qui a tranché : Vercel
+
+- Intégration Next la plus directe, zéro adaptateur.
+- Preview par PR immédiat.
+
+{/* TODO: fill in — nuancer : cas où Netlify resterait pertinent */}
+
+## Conclusion
+
+{/* TODO: fill in — recommandation selon le type de projet (statique vs full-stack) */}
