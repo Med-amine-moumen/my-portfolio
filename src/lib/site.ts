@@ -140,9 +140,10 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: 'HTML5', icon: '🌐' },
       { name: 'CSS3', icon: '🎨' },
       { name: 'JavaScript', icon: '⚡' },
-      { name: 'React', icon: '⚛️' },
-      { name: 'Tailwind CSS', icon: '💨' },
       { name: 'TypeScript', icon: '💙' },
+      { name: 'React', icon: '⚛️' },
+      { name: 'Next.js', icon: '▲' },
+      { name: 'Tailwind CSS', icon: '💨' },
     ],
   },
   {
@@ -150,9 +151,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     icon: '⚙️',
     skills: [
       { name: 'Node.js', icon: '🟢' },
-      { name: 'Express', icon: '🚀' },
+      { name: 'Express', icon: '🚂' },
+      { name: 'PostgreSQL', icon: '🐘' },
       { name: 'MongoDB', icon: '🍃' },
+      { name: 'Prisma', icon: '🔺' },
+      { name: 'Supabase', icon: '🟩' },
       { name: 'Firebase', icon: '🔥' },
+      { name: 'REST API', icon: '🔌' },
+      { name: 'NextAuth', icon: '🔐' },
     ],
   },
   {
@@ -160,9 +166,13 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     icon: '🛠️',
     skills: [
       { name: 'Git', icon: '📦' },
+      { name: 'GitHub', icon: '🐙' },
+      { name: 'Vercel', icon: '☁️' },
       { name: 'Figma', icon: '🎯' },
       { name: 'VS Code', icon: '💻' },
-      { name: 'REST API', icon: '🔌' },
+      { name: 'Stripe', icon: '💳' },
+      { name: 'GSAP', icon: '🎬' },
+      { name: 'Three.js', icon: '🧊' },
     ],
   },
 ];

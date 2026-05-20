@@ -34,7 +34,7 @@
   },
   "About": {
     "title": "À propos",
-    "body": "Développeur passionné, je me concentre sur des expériences web interactives et accessibles. Je cherche en permanence à progresser et à livrer des solutions de qualité."
+    "body": "Développeur full-stack basé à Agadir, au Maroc, je conçois des applications web complètes — du back-end à l'interface. J'aime particulièrement donner vie à des idées un peu folles : un hommage cinématographique en 3D, un classement de billard en temps réel, ou un SaaS de gestion pensé pour de vrais utilisateurs. Je travaille principalement avec Next.js, TypeScript et PostgreSQL, et je cherche constamment à écrire du code propre, performant et maintenable. Actuellement ouvert aux opportunités en freelance, à temps plein ou en télétravail — n'hésitez pas à me contacter."
   },
   "Projects": {
     "title": "Mes projets",
