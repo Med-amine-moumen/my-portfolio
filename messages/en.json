@@ -6,22 +6,16 @@
       "title": "Mohamed Amine Moumen — Full-Stack Developer",
       "description": "Portfolio of Mohamed Amine Moumen, full-stack developer. Clean, scalable backends and fluid frontends built with modern web technologies."
     },
-    "blog": {
-      "title": "Blog",
-      "description": "Technical articles on web development: Next.js, deployment, databases and field notes."
-    },
-    "contact": {
-      "title": "Contact",
-      "description": "Let's talk about your project: book a call, send an email, or find me on social media."
-    },
     "projectFallbackDescription": "Detailed case study of a project built by Mohamed Amine Moumen."
   },
   "Nav": {
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "blog": "Blog",
+    "miniProjects": "Mini Projects",
+    "skills": "Skills",
     "contact": "Contact",
+    "hireMe": "Hire Me",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -34,13 +28,12 @@
   },
   "About": {
     "title": "About Me",
-    "body": "Full-stack developer based in Agadir, Morocco, I build complete web applications — from back-end to interface. I especially enjoy bringing slightly crazy ideas to life: a 3D cinematic tribute, a real-time pool leaderboard, or a management SaaS designed for real users. I work mainly with Next.js, TypeScript and PostgreSQL, always aiming for clean, performant, maintainable code. Currently open to freelance, full-time or remote opportunities — feel free to reach out."
+    "body": "Full-stack developer based in Agadir, Morocco. I build complete web apps with Next.js, TypeScript and PostgreSQL — from a 3D cinematic tribute to a real-time pool leaderboard to a management SaaS. Currently open to freelance, full-time or remote opportunities."
   },
   "Projects": {
     "title": "My Projects",
     "subtitle": "Things I've Built",
     "visitLive": "Visit Live Site",
-    "caseStudy": "Read case study",
     "comingSoon": "Coming Soon",
     "inDevelopment": "In Development",
     "badgeWip": "WIP",
@@ -65,14 +58,6 @@
       "better-call-saul": {
         "title": "Better Call Saul!",
         "description": "A cinematic single-page tribute to Saul Goodman — GSAP title-card intro, scroll-choreographed \"case files\" with stamp slams, a React Three Fiber inflatable Lady Liberty, an SSE live client counter, and a hover-triggered Kim Wexler outro."
-      },
-      "habit-tracker": {
-        "title": "Habit Tracker",
-        "description": "Habit tracker with gamification and analytics: streaks, badges, progress stats. Auth, Postgres (Neon) database and a shadcn/ui interface."
-      },
-      "portfolio-v2": {
-        "title": "Portfolio v2",
-        "description": "This site. A Vite → Next.js migration for SSR and SEO: server rendering, bilingual FR/EN, and MDX-driven content."
       }
     }
   },
@@ -114,32 +99,11 @@
   "WorkTogether": {
     "title": "Let's Work Together",
     "body": "Open for freelance gigs, full-time roles, or just a cool project. Let's discuss.",
-    "cta": "Get in touch"
-  },
-  "ContactPage": {
-    "title": "Let's Work Together",
-    "intro": "Got a project idea, an opportunity, or just want to chat? Pick whichever channel works for you.",
-    "scheduleTitle": "Book a call",
-    "calendlyMissing": "The scheduling link isn't configured yet. Set the NEXT_PUBLIC_CALENDLY_URL environment variable.",
-    "emailTitle": "Email me",
-    "emailButton": "Send an email",
-    "emailSubject": "Reaching out from your portfolio",
-    "socialTitle": "On social media",
-    "cvTitle": "My résumé",
-    "downloadCvFr": "Télécharger le CV (FR)",
-    "downloadCvEn": "Download CV (EN)"
-  },
-  "Blog": {
-    "title": "Blog",
-    "intro": "Technical notes and field reports on web development.",
-    "allTag": "All",
-    "filterLabel": "Filter by tag",
-    "readingTime": "{minutes} min read",
-    "draftBadge": "Draft",
-    "empty": "No posts yet. Check back soon!",
-    "backToBlog": "Back to blog",
-    "publishedOn": "Published on {date}",
-    "updatedOn": "Updated on {date}"
+    "nameLabel": "Name",
+    "namePlaceholder": "Full name",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can I help you?",
+    "comingSoon": "Coming Soon"
   },
   "ProjectPage": {
     "backToProjects": "Back to projects",

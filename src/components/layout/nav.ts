@@ -1,6 +1,6 @@
 /**
- * Builds the shared nav model. Home sections stay hash anchors (faithful to
- * the original one-pager); Blog/Contact are real routes.
+ * Builds the shared nav model. Mirrors the original Vite one-pager:
+ * every link is a hash anchor to a section on the home page.
  */
 export interface NavItem {
   label: string;
@@ -14,9 +14,11 @@ export function buildNavItems(
   t: (key: string) => string,
 ): NavItem[] {
   return [
+    { label: t('home'), href: `/${locale}#home`, kind: 'anchor' },
     { label: t('about'), href: `/${locale}#about`, kind: 'anchor' },
     { label: t('projects'), href: `/${locale}#big-projects`, kind: 'anchor' },
-    { label: t('blog'), href: '/blog', kind: 'route' },
-    { label: t('contact'), href: '/contact', kind: 'route' },
+    { label: t('skills'), href: `/${locale}#skills`, kind: 'anchor' },
+    { label: t('contact'), href: `/${locale}#contact`, kind: 'anchor' },
+    { label: t('hireMe'), href: `/${locale}#hire-me`, kind: 'anchor' },
   ];
 }

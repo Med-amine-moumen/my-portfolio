@@ -10,7 +10,6 @@ export const SITE = {
   email: 'moumenmohamedamine8@gmail.com',
   github: 'https://github.com/Med-amine-moumen',
   linkedin: 'https://www.linkedin.com/in/mohamed-amine-moumen-2681702a6/',
-  calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL ?? '',
 } as const;
 
 export interface ProjectMeta {
@@ -22,11 +21,11 @@ export interface ProjectMeta {
   domain?: string;
   tech: string[];
   status?: 'live' | 'wip';
-  /** Whether a /projects/<slug> MDX case study exists. */
-  caseStudy: boolean;
   image: string;
   imageWidth: number;
   imageHeight: number;
+  /** Unsplash fallback shown if the microlink screenshot fails to load. */
+  fallbackImage: string;
 }
 
 /** Display order on the home "My Projects" grid (faithful to the original). */
@@ -37,30 +36,33 @@ export const PROJECTS: ProjectMeta[] = [
     repoUrl: 'https://github.com/Med-amine-moumen/ecommerce',
     domain: 'ecommerce-amine.vercel.app',
     tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Stripe'],
-    caseStudy: true,
     image: '/projects/ecommerce/cover.png',
     imageWidth: 1200,
     imageHeight: 675,
+    fallbackImage:
+      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80',
   },
   {
     slug: 'recipe-app',
     liveUrl: 'https://recipe-app-moumen.vercel.app/',
     domain: 'recipe-app-moumen.vercel.app',
     tech: ['React', 'JavaScript', 'Tailwind CSS', 'REST API'],
-    caseStudy: false,
     image: '/projects/recipe-app/cover.png',
     imageWidth: 1200,
     imageHeight: 675,
+    fallbackImage:
+      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=1200&q=80',
   },
   {
     slug: 'surf-camp',
     domain: 'surf-camp.vercel.app',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase'],
     status: 'wip',
-    caseStudy: false,
     image: '/projects/surf-camp/cover.png',
     imageWidth: 1200,
     imageHeight: 675,
+    fallbackImage:
+      'https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
   },
   {
     slug: 'poolhomies',
@@ -68,10 +70,11 @@ export const PROJECTS: ProjectMeta[] = [
     domain: 'poolhomies.vercel.app',
     tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
     status: 'live',
-    caseStudy: false,
     image: '/projects/poolhomies/cover.png',
     imageWidth: 1200,
     imageHeight: 675,
+    fallbackImage:
+      'https://images.unsplash.com/photo-1611095970980-20f304cfe37b?w=1200&q=80',
   },
   {
     slug: 'better-call-saul',
@@ -79,35 +82,13 @@ export const PROJECTS: ProjectMeta[] = [
     domain: 'saul-good-man.vercel.app',
     tech: ['Next.js', 'TypeScript', 'GSAP', 'Three.js'],
     status: 'live',
-    caseStudy: false,
     image: '/projects/better-call-saul/cover.png',
     imageWidth: 1200,
     imageHeight: 675,
-  },
-  {
-    slug: 'habit-tracker',
-    // TODO: add liveUrl once deployed
-    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'NextAuth.js', 'shadcn/ui'],
-    caseStudy: true,
-    image: '/projects/habit-tracker/cover.png',
-    imageWidth: 1200,
-    imageHeight: 675,
-  },
-  {
-    slug: 'portfolio-v2',
-    repoUrl: 'https://github.com/Med-amine-moumen/portfolio',
-    tech: ['Next.js', 'TypeScript', 'next-intl', 'MDX', 'Tailwind CSS'],
-    status: 'live',
-    caseStudy: true,
-    image: '/projects/portfolio-v2/cover.png',
-    imageWidth: 1200,
-    imageHeight: 675,
+    fallbackImage:
+      'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1200&q=80',
   },
 ];
-
-export const PROJECTS_WITH_CASE_STUDY = PROJECTS.filter((p) => p.caseStudy).map(
-  (p) => p.slug,
-);
 
 export type DemoKey = 'todo' | 'rps' | 'calculator' | 'counter';
 

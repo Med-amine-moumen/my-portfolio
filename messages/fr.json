@@ -6,22 +6,16 @@
       "title": "Mohamed Amine Moumen — Développeur Full-Stack",
       "description": "Portfolio de Mohamed Amine Moumen, développeur full-stack. Back-ends propres et évolutifs, front-ends fluides avec les technologies web modernes."
     },
-    "blog": {
-      "title": "Blog",
-      "description": "Articles techniques sur le développement web : Next.js, déploiement, bases de données et retours d'expérience."
-    },
-    "contact": {
-      "title": "Contact",
-      "description": "Discutons de votre projet : prenez rendez-vous, écrivez-moi ou retrouvez-moi sur les réseaux."
-    },
     "projectFallbackDescription": "Étude de cas détaillée d'un projet réalisé par Mohamed Amine Moumen."
   },
   "Nav": {
     "home": "Accueil",
     "about": "À propos",
     "projects": "Projets",
-    "blog": "Blog",
+    "miniProjects": "Mini-projets",
+    "skills": "Compétences",
     "contact": "Contact",
+    "hireMe": "Recrutez-moi",
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu"
   },
@@ -34,13 +28,12 @@
   },
   "About": {
     "title": "À propos",
-    "body": "Développeur full-stack basé à Agadir, au Maroc, je conçois des applications web complètes — du back-end à l'interface. J'aime particulièrement donner vie à des idées un peu folles : un hommage cinématographique en 3D, un classement de billard en temps réel, ou un SaaS de gestion pensé pour de vrais utilisateurs. Je travaille principalement avec Next.js, TypeScript et PostgreSQL, et je cherche constamment à écrire du code propre, performant et maintenable. Actuellement ouvert aux opportunités en freelance, à temps plein ou en télétravail — n'hésitez pas à me contacter."
+    "body": "Développeur full-stack basé à Agadir, au Maroc. Je conçois des applications web complètes avec Next.js, TypeScript et PostgreSQL — d'un hommage cinématographique en 3D à un classement de billard en temps réel, en passant par un SaaS de gestion. Actuellement ouvert aux opportunités en freelance, à temps plein ou en télétravail."
   },
   "Projects": {
     "title": "Mes projets",
     "subtitle": "Ce que j'ai construit",
     "visitLive": "Voir le site en ligne",
-    "caseStudy": "Lire l'étude de cas",
     "comingSoon": "Bientôt disponible",
     "inDevelopment": "En développement",
     "badgeWip": "EN COURS",
@@ -65,14 +58,6 @@
       "better-call-saul": {
         "title": "Better Call Saul !",
         "description": "Hommage cinématographique d'une seule page à Saul Goodman — intro carton-titre GSAP, « dossiers » chorégraphiés au défilement avec tampons, Statue de la Liberté gonflable en React Three Fiber, compteur de visiteurs en direct (SSE) et outro Kim Wexler au survol."
-      },
-      "habit-tracker": {
-        "title": "Habit Tracker",
-        "description": "Suivi d'habitudes avec gamification et analytics : séries, badges, statistiques de progression. Authentification, base de données Postgres (Neon) et UI shadcn."
-      },
-      "portfolio-v2": {
-        "title": "Portfolio v2",
-        "description": "Ce site. Migration de Vite vers Next.js pour le SSR et le SEO : rendu côté serveur, bilingue FR/EN et contenu piloté par MDX."
       }
     }
   },
@@ -114,32 +99,11 @@
   "WorkTogether": {
     "title": "Travaillons ensemble",
     "body": "Disponible pour des missions freelance, des postes à temps plein ou simplement un projet sympa. Discutons-en.",
-    "cta": "Prendre contact"
-  },
-  "ContactPage": {
-    "title": "Travaillons ensemble",
-    "intro": "Une idée de projet, une opportunité, ou juste envie d'échanger ? Choisissez le canal qui vous convient.",
-    "scheduleTitle": "Réserver un créneau",
-    "calendlyMissing": "Le lien de prise de rendez-vous n'est pas encore configuré. Renseignez la variable d'environnement NEXT_PUBLIC_CALENDLY_URL.",
-    "emailTitle": "M'écrire un e-mail",
-    "emailButton": "Envoyer un e-mail",
-    "emailSubject": "Prise de contact depuis le portfolio",
-    "socialTitle": "Sur les réseaux",
-    "cvTitle": "Mon CV",
-    "downloadCvFr": "Télécharger le CV (FR)",
-    "downloadCvEn": "Download CV (EN)"
-  },
-  "Blog": {
-    "title": "Blog",
-    "intro": "Notes techniques et retours d'expérience sur le développement web.",
-    "allTag": "Tous",
-    "filterLabel": "Filtrer par tag",
-    "readingTime": "{minutes} min de lecture",
-    "draftBadge": "Brouillon",
-    "empty": "Aucun article pour le moment. Revenez bientôt !",
-    "backToBlog": "Retour au blog",
-    "publishedOn": "Publié le {date}",
-    "updatedOn": "Mis à jour le {date}"
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom complet",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Comment puis-je vous aider ?",
+    "comingSoon": "Bientôt disponible"
   },
   "ProjectPage": {
     "backToProjects": "Retour aux projets",

@@ -1,9 +1,8 @@
-import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
-import { ExternalLink, ArrowRight } from 'lucide-react';
-import { Link } from '@/i18n/navigation';
+import { ExternalLink } from 'lucide-react';
 import { TiltCard } from '@/components/TiltCard';
 import { PROJECTS } from '@/lib/site';
+import { ProjectScreenshot } from './ProjectScreenshot';
 
 const DELAYS = ['1', '2', '3', '4'] as const;
 
@@ -66,15 +65,11 @@ export async function Projects() {
                   </div>
                 )}
                 <div className="relative aspect-video overflow-hidden bg-gray-50 dark:bg-primary-black-light">
-                  <Image
-                    src={p.image}
+                  <ProjectScreenshot
+                    liveUrl={isWip ? undefined : p.liveUrl}
+                    fallback={p.fallbackImage}
                     alt={title}
-                    width={p.imageWidth}
-                    height={p.imageHeight}
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className={`object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out ${
-                      isWip ? 'opacity-30 blur-[1px] grayscale' : ''
-                    }`}
+                    isWip={isWip}
                   />
                   {isWip && (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -116,15 +111,6 @@ export async function Projects() {
                   ))}
                 </div>
                 <div className="flex items-center gap-3 pt-3 border-t border-gray-100 dark:border-dark-border">
-                  {p.caseStudy && (
-                    <Link
-                      href={`/projects/${p.slug}`}
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-accent-base hover:text-accent-hover dark:text-accent-light transition-colors duration-200"
-                    >
-                      {t('caseStudy')}
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  )}
                   {p.liveUrl ? (
                     <a
                       href={p.liveUrl}
